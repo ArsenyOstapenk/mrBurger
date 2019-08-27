@@ -1,0 +1,20 @@
+
+.hamburger-menu__list {
+   display: none;
+   flex-direction: column;
+   justify-content: space-between;
+   width: 1.63rem;
+   height: 1.63rem;
+
+   @include tablets {
+      display: flex;
+   }
+}
+
+.hamburger-menu__list-item {
+   display: block;
+   background-color: #fff;
+   height: calc(100% / 5);
+   width: 100%;
+   border-radius: rem(10px);
+}

@@ -1,0 +1,59 @@
+.nav__list {
+   display: inline-flex;
+   color: #fff;
+   margin-right: .94rem;
+}
+
+.nav__item {
+   list-style: none;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   font-size: .81rem;
+   font-family: ubuntu-regular;
+   margin-right: 0rem;
+   text-transform: uppercase;
+
+   &:last-child {
+      margin-right: 0rem;
+   }
+}
+
+.nav__item:after {
+   content: '';
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   height: .31rem;
+   width: .31rem;
+   border-radius: 50%;
+   background-color: #fff;
+   margin: auto .94rem;
+}
+
+.nav__item:last-child:after {
+   content: '';
+   display: none;
+}
+
+.nav__link {
+   font-size: .81rem;
+   color: #fff;
+   text-transform: uppercase;
+   text-decoration:none;
+}
+
+.nav__section-button {
+   background: #e45028;
+   border-radius: .38rem;
+   border-style: none;
+   color: #fff;
+   padding: .63rem 1.06rem;
+   text-transform: uppercase;
+   font-size: .81rem;
+   font-family: ubuntu-regular;
+
+   @include tablets {
+      margin-right: rem(30px);
+   }
+}

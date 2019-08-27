@@ -1,0 +1,87 @@
+.section--menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background: url(../../img/bg_menu.png) center center no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+}
+
+.menu__title {
+    color: #ffffff;
+    font-family: gagalin-regular;
+    font-size: 4.5rem;
+    font-weight: 400;
+    line-height: 4rem;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+.menu__list {
+    display: flex;
+}
+
+.menu__block {
+    height: 100%;
+    display: flex;
+
+    &.active {
+        trigger__text {
+            color: #ecad38;
+        }
+    }
+}
+
+.menu__trigger {
+    width: 5rem;
+    display: block;
+    height: 100%;
+    position: relative;
+}
+
+.trigger__text {
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 100%;
+    transform: rotate(-90deg) translateY(-50%);
+    transform-origin: 0 0;
+    white-space: nowrap;
+    margin-top: -1.25rem;
+    color: #ffffff;
+    font-family: gagalin-regular;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 4rem;
+    padding-left: 1.25rem;
+}
+
+.menu__content {
+    height: 100%;
+    background: rgba(#2f3234, .8);
+    width: 0;
+    overflow: hidden;
+}
+
+.menu__text {
+    font-size: .88rem;
+    color: #ffffff;
+    padding: 3.75rem 1.88rem;
+    display: none;
+}
+
+.menu__content-act {
+    width: 34.38rem;
+}
+
+.menu__text-act {
+    display: block;
+}
+
+.menu__pic {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}

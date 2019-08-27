@@ -1,0 +1,80 @@
+.section--block-two {
+   background: url(../../img/bg_best.png) center center no-repeat;
+   background-size: cover;
+   height: 100vh;
+   width: 100%;
+}
+
+.container__block-two {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.block-two__title {
+   text-align: center center;
+   font-family: gagalin-regular;
+   font-size: 4.5rem;
+   text-transform: uppercase;
+   color: #2f3234;
+   margin-bottom: 3.44rem;
+}
+
+.content__list {
+   display: inline-flex;
+   justify-content: flex-start;
+}
+
+.content__list-section {
+   width: calc(100%/3);
+   list-style: none;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-right: 2.12rem;
+   margin-bottom: 2.19rem;
+}
+
+.list-section__meat {
+   padding-bottom: .94rem;
+   width: 6.06rem;
+   height: 5.56rem;
+   fill: #e25028;
+}
+
+.list-section__hand {
+   padding-bottom: .94rem;
+   width: 4.56rem;
+   height: 5.31rem;
+   fill: #f8b43a;
+}
+
+.list-section__natural {
+   padding-bottom: .94rem;
+   width: 5.5rem;
+   height: 4.69rem;
+   fill: #8ac03e;
+}
+
+.content__list-section:last-child {
+   margin-right: 0;
+}
+
+.content__text h1 {
+   color: #2f3234;
+   font-family: lifehack;
+   font-size: 1.5rem;
+   font-weight: 500;
+   line-height: 1.76rem;
+   text-align: center;
+}
+
+.content__text p {
+   opacity: 0.8;
+   color: #2f3234;
+   font-family: ubuntu-regular;
+   font-size: .88rem;
+   font-weight: 300;
+   line-height: 1.5rem;
+}

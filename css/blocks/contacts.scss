@@ -1,0 +1,121 @@
+.contacts {
+    background: url(../../img/bg_map.png) center center no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    margin: 0 0;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../../img/bg_footer.png) center no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    margin-bottom: 0;
+}
+
+.footer__phone {
+    width: .75rem;
+    height: .69rem;
+    fill: #e25028;
+}
+
+.footer__contact-tel {
+    display: flex;
+    width: 50%;
+}
+
+.footer__contacts-tel h3 {
+    text-decoration: none;
+    font-style: normal;
+    width: 17.06rem;
+    height: 2.38rem;
+    color: #ffffff;
+    font-family: ubuntu-regular;
+    font-size: .88rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+}
+
+.contacts__phone {
+    font-style: normal;
+    text-decoration: none;
+    color: #e25028;
+    font-family: ubuntu-bold;
+    font-weight: 700;
+}
+
+.footer-contacts-soc {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    width: 50%;
+}
+
+.footer__social {
+    display: inline-flex;
+    align-items: center;
+}
+
+.social__item {
+    margin-right: 1.25rem;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+
+.social-vk {
+    fill: grey;
+    width: 1.9rem;
+    height: 1rem;
+    opacity: 0.3;
+
+    &:hover {
+        background: #ffffff;
+        fill: black;
+    }
+}
+
+.social-fb {
+    fill: grey;
+    width: 1.25rem;
+    height: 1.25rem;
+    opacity: 0.3;
+
+    &:hover {
+        background: #ffffff;
+        fill: black;
+    }
+}
+
+.social-inst {
+    fill: grey;
+    width: 1.25rem;
+    height: 1.25rem;
+    opacity: 0.3;
+
+    &:hover {
+        background: #ffffff;
+        fill: black;
+    }
+}
+
+.social-twitter {
+    fill: grey;
+    width: 1.25rem;
+    height: 1rem;
+    opacity: 0.3;
+
+    &:hover {
+        background: #ffffff;
+        fill: black;
+    }
+}

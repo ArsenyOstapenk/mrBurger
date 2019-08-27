@@ -1,0 +1,148 @@
+.section--team {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background: url(../../img/bg_team.png) center center no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+}
+
+.team__block-right {
+    background: #313436;
+    opacity: .95;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 100vh;
+
+    @include tablets {
+        display: flex;
+        justify-content: center;
+        left: 0;
+    }
+}
+
+.team__block-in {
+    padding-top: 7.19rem;
+    padding-right: 6rem;
+    padding-bottom: 8, 75rem;
+    padding-left: 6rem;
+
+    @include tablets {
+        text-align: center;
+    }
+}
+
+.team__title {
+    color: #f9b43b;
+    font-family: gagalin-regular;
+    font-size: 4.5rem;
+    font-weight: 400;
+    line-height: 4rem;
+    margin: 0 0 3.13rem 0;
+}
+
+.team__name {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    opacity: 0.92;
+
+    @include tablets {
+        justify-content: center;
+    }
+}
+
+.team__name h2 {
+    color: #fff;
+    font-family: gagalin-regular;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.76rem;
+
+    @include tablets {
+        margin-bottom: rem(15px);
+    }
+}
+
+.team__name--active h2 {
+    color: #f9b43b;
+}
+
+.team__triangle {
+    display: flex;
+    height: 0;
+    width: 0;
+    border: rem(6px) solid transparent;
+    border-top-width: .44rem;
+    border-top-color: #fff;
+    border-bottom-width: 0;
+    margin: .63rem .56rem 0 0;
+
+    &--active {
+        border-top-width: 0;
+        border-bottom-color: #f9b43b;
+        border-bottom-width: .4rem;
+
+    }
+}
+
+.team__hover-block {
+    display: none;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 2.12rem;
+
+    &--active {
+        display: flex;
+    }
+
+    @include tablets {
+        flex-direction: column;
+    }
+}
+
+
+.team__pic {
+    border-radius: 50%;
+    margin: auto 1.25rem;
+
+    @include tablets {
+        margin: 0 auto;
+        margin-bottom: rem(20px);
+    }
+}
+
+.team__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+
+    @include tablets {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+.team__text h3 {
+    flex: 1;
+    color: #ffffff;
+    font-family: ubuntu-bold;
+    font-weight: 700;
+    font-size: .88rem;
+    line-height: 1.5rem;
+}
+
+.team__text>p {
+    flex: 2;
+    color: #ffffff;
+    font-family: ubuntu-light;
+    font-size: .75rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+}
