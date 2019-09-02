@@ -1,6 +1,136 @@
 .burgers {
-    background: url(../../img/bg_burgers.png) center center no-repeat;
-    background-size: cover;
+    background: linear-gradient(#f9b43b, #eb8d3a, #f9b43b);
     position: relative;
     height: 100vh;
+    width: 100%;
+}
+
+.burgers__slider {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+
+}
+
+.slider-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width:100%;
+    position: relative;
+    overflow: hidden;
+
+    &:first-child {
+        width: 10%;
+    }
+
+    &:last-child {
+        width: 10%;
+    }
+}
+
+.slider-block__active {
+    display: inline-flex;
+    width: 300%;
+    overflow: hidden;
+    position: absolute;
+    will-change: left;
+    transition: left 1s;
+    // left: 0;
+}
+
+.slide-elem {
+    display: flex;
+    padding: 0 rem(30px);
+
+    @include tablets {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.slide-elem__leftside {
+    // position: relative;
+    width: 50%;
+    height: 100%;
+    margin-right: 5%;
+    background: url(../../img/steam_hello.png) center center no-repeat;
+
+    @include tablets {
+        max-width: 120%;
+        margin-right: 0;
+    }
+}
+
+.slide-elem__leftside img {
+    padding: auto 0;
+
+    @include tablets {
+        max-width: 80%;
+    }
+}
+
+.slide-elem__rightside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+
+    @include tablets {
+        width: 80%;
+        text-align: center;
+        margin-right: 0;
+    }
+}
+
+.arrow-left {
+    border: rem(30px) solid transparent;
+    width: 0;
+    height: 0;
+    border-left-width: 0;
+    border-right-color: #fff;
+
+    @include tablets {
+        margin-right: 0;
+    }
+}
+
+.arrow-right {
+    border: rem(30px) solid transparent;
+    width: 0;
+    height: 0;
+    border-right-width: 0;
+    border-left-color: #fff;
+}
+
+.rightside__title {
+    font-family: gagalin-regular;
+    color: #fff;
+    font-size: 4.5rem;
+}
+
+.rightside__text {
+    font-family: ubuntu-regular;
+    color: #fff;
+    font-size: .8rem;
+    line-height: 1.6rem;
+}
+
+.rightside__price {
+    font-family: gagalin-regular;
+    font-size: 4.5rem;
+    display: inline-flex;
+    align-items: flex-end;
+    color: #e35028;
+}
+
+.rightside__price p {
+    font-family: gagalin-regular;
+    font-size: 2.5rem;
+    margin-left: 3%;
 }
