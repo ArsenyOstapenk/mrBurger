@@ -42,7 +42,7 @@
                   </ul>
                   <button type="button" class="nav__section-button">заказать</button>
                   <a href="" class="hamburger-menu">
-                     <ul class="hamburger-menu__list">
+                     <ul class="hamburger-menu__list" id="hmenu">
                         <li class="hamburger-menu__list-item"></li>
                         <li class="hamburger-menu__list-item"></li>
                         <li class="hamburger-menu__list-item"></li>
@@ -64,6 +64,44 @@
                   <use xlink:href="./css/layout/sprite.svg#scroll_down"></use>
                </svg>
             </button>
+         </div>
+      </section>
+      <section class="section hover-menu" id="hover-menu">
+         <div class="container">
+            <header class="hover-menu__header">
+               <img class="logo" src="./img/logo.png" alt="логотип MrBurger">
+               <a class="cross" id="cross">
+                  <ul class="cross__list">
+                     <li class="cross__list-one"></li>
+                     <li class="cross__list-two"></li>
+                  </ul>
+               </a>
+            </header>
+            <div class="hover-menu__content">
+               <ul class="hover-content__list">
+                  <li class="content__list-item">
+                     <a href="" class="item__link">о нас</a>
+                  </li>
+                  <li class="content__list-item">
+                     <a href="" class="item__link">бургеры</a>
+                  </li>
+                  <li class="content__list-item">
+                     <a href="" class="item__link">команда</a>
+                  </li>
+                  <li class="content__list-item">
+                     <a href="" class="item__link">меню</a>
+                  </li>
+                  <li class="content__list-item">
+                     <a href="" class="item__link">отзывы</a>
+                  </li>
+                  <li class="content__list-item">
+                     <a href="" class="item__link">как мы работаем</a>
+                  </li>
+                  <li class="content__list-item">
+                     <a href="" class="item__link">контакты</a>
+                  </li>
+               </ul>
+            </div>
          </div>
       </section>
       <!-- окончание приветственой страницы -->
@@ -169,7 +207,7 @@
       </section>
       <!-- окончание секции бургеры -->
       <!-- начало секции команда -->
-      <section class="section section--team">
+      <section class="section team">
          <div class="team__block-right">
             <div class="team__block-in">
                <div class="team__title">
@@ -206,11 +244,11 @@
                         </div>
                      </li>
                      <li class="team__member">
-                        <div class="team__name team__name--active">
-                           <div class="team__triangle team__triangle--active"></div>
+                        <div class="team__name">
+                           <div class="team__triangle"></div>
                            <h2>джейк финн</h2>
                         </div>
-                        <div class="team__hover-block team__hover-block--active">
+                        <div class="team__hover-block">
                            <img src="./img/Slice_1.png" class="team__pic" alt="">
                            <div class="team__text">
                               <h3>Оператор</h3>
@@ -240,8 +278,8 @@
       </section>
       <!-- окончание секции команда -->
       <!-- начало секции меню -->
-      <section class="section section--menu">
-         <div class="menu menu__title">
+      <section class="section menu">
+         <div class="menu__title">
             меню
          </div>
          <ul class="menu__list">
@@ -250,8 +288,8 @@
                   <img src="./img/meat_eat.png" class="menu__pic" alt="">
                   <span class="trigger__text">для мясоедов</span>
                </a>
-               <div class="menu__content menu__content-act">
-                  <div class="menu__text menu__text-act"> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+               <div class="menu__content">
+                  <div class="menu__text"> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                      Assumenda temporibus ullam ipsam blanditiis, atque ad,
                      accusamus porro provident nostrum totam aspernatur, labore
                      debitis voluptatum cumque excepturi aut autem. Laborum, hic.

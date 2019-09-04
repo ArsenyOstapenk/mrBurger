@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    width:100%;
+    width: 100%;
     position: relative;
     overflow: hidden;
 
@@ -94,9 +94,15 @@
     height: 0;
     border-left-width: 0;
     border-right-color: #fff;
+    opacity: .3;
+
+    &:hover {
+        opacity: 1;
+    }
 
     @include tablets {
         margin-right: 0;
+        opacity: 1;
     }
 }
 
@@ -106,6 +112,15 @@
     height: 0;
     border-right-width: 0;
     border-left-color: #fff;
+    opacity: .3;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    @include tablets {
+        opacity: 1;
+    }
 }
 
 .rightside__title {

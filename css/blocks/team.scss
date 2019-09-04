@@ -1,4 +1,4 @@
-.section--team {
+.team {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -69,8 +69,41 @@
     }
 }
 
-.team__name--active h2 {
-    color: #f9b43b;
+.team__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.team__member {
+    cursor: pointer;
+}
+
+.team__member--active {
+
+    & .team__triangle {
+        border-top-color: #f9b43b;
+        animation: triangle ;
+    }
+
+    & .team__name h2 {
+        color: #f9b43b;
+    }
+
+    & .team__hover-block {
+        display: flex;
+    }
+}
+
+@keyframes triangle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(180deg);
+        transform-origin: 50% 50%;
+    }
 }
 
 .team__triangle {
@@ -82,13 +115,6 @@
     border-top-color: #fff;
     border-bottom-width: 0;
     margin: .63rem .56rem 0 0;
-
-    &--active {
-        border-top-width: 0;
-        border-bottom-color: #f9b43b;
-        border-bottom-width: .4rem;
-
-    }
 }
 
 .team__hover-block {
@@ -96,10 +122,6 @@
     flex-direction: row;
     justify-content: flex-start;
     margin-bottom: 2.12rem;
-
-    &--active {
-        display: flex;
-    }
 
     @include tablets {
         flex-direction: column;

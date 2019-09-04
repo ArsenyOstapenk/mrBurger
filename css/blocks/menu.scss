@@ -1,4 +1,4 @@
-.section--menu {
+.menu {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -21,17 +21,6 @@
 
 .menu__list {
     display: flex;
-}
-
-.menu__block {
-    height: 100%;
-    display: flex;
-
-    &.active {
-        trigger__text {
-            color: #ecad38;
-        }
-    }
 }
 
 .menu__trigger {
@@ -70,18 +59,33 @@
     color: #ffffff;
     padding: 3.75rem 1.88rem;
     display: none;
+    font-family: ubuntu-regular;
+    line-height: 2rem;
 }
 
-.menu__content-act {
-    width: 34.38rem;
-}
-
-.menu__text-act {
-    display: block;
-}
 
 .menu__pic {
     height: 100%;
     width: 100%;
     position: relative;
+}
+
+.menu__block {
+    height: 100%;
+    display: flex;
+}
+
+.menu__block--active {
+
+    & .menu__content {
+        width: 34.38rem;
+    }
+
+    & .menu__text {
+        display: block;
+    }
+
+    & .trigger__text {
+        color: #ecad38;
+    }
 }
