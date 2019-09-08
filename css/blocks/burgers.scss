@@ -38,6 +38,7 @@
     position: absolute;
     will-change: left;
     transition: left 1s;
+    height: 100%;
 }
 
 .slide-elem {
@@ -52,22 +53,27 @@
 }
 
 .slide-elem__leftside {
-    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // width: 50%;
     height: 100%;
     margin-right: 5%;
-    background: url(../../img/steam_hello.png) center center no-repeat;
 
     @include tablets {
-        max-width: 120%;
+    //     // width: 100%;
         margin-right: 0;
+        margin-bottom: -5.85rem;
+    }
+
+    @include phone {
+        widht: 100%;
     }
 }
 
-.slide-elem__leftside img {
-    padding: auto 0;
-
-    @include tablets {
-        max-width: 80%;
+.bbb {
+    @include phone {
+        max-widht: 70%;
     }
 }
 
@@ -80,9 +86,11 @@
     width: 50%;
 
     @include tablets {
-        width: 80%;
+        width: 100%;
         text-align: center;
         margin-right: 0;
+        justify-content: flex-start;
+
     }
 }
 
@@ -125,6 +133,11 @@
     font-family: gagalin-regular;
     color: #fff;
     font-size: 4.5rem;
+
+    @include phone {
+        font-size: 2.5rem;
+
+    }
 }
 
 .rightside__text {
@@ -140,10 +153,20 @@
     display: inline-flex;
     align-items: flex-end;
     color: #e35028;
+
+    @include phone {
+        font-size: 2.3rem;
+
+    }
 }
 
 .rightside__price p {
     font-family: gagalin-regular;
     font-size: 2.5rem;
     margin-left: 3%;
+
+    @include phone {
+        font-size: 1.5rem;
+
+    }
 }

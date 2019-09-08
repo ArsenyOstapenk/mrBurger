@@ -7,9 +7,10 @@
       display: none;
    }
 }
+
 .form__area {
    display: flex;
-   
+
    @include tablets {
       flex-direction: column;
    }
@@ -31,13 +32,17 @@
    @include tablets {
       width: 100%;
    }
+
+   @include phone {
+      margin-top: -2.25rem;
+   }
 }
 
 .block1__leftside-burger {
    @include tablets {
-      max-width: 80%;
+      max-width: 70%;
    }
-} 
+}
 
 .content-block {
    display: inline-flex;
@@ -64,6 +69,11 @@
       width: 100%;
 
    }
+
+   @include phone {
+      padding-top: .81rem;
+
+   }
 }
 
 .block1__rightside-title {
@@ -73,6 +83,12 @@
    font-size: 4.5rem;
    letter-spacing: -0.03rem;
    margin-bottom: 1.43rem;
+
+   @include phone {
+      font-size: 3.5rem;
+      margin-bottom: 0.43rem;
+
+   }
 }
 
 .block1__rightside-text {
@@ -86,6 +102,12 @@
    @include tablets {
       width: 70%;
       text-align: center;
+   }
+
+   @include phone {
+      font-size: 2.06rem;
+      padding-top: 0;
+
    }
 }
 

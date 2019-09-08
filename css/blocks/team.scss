@@ -120,6 +120,7 @@
 .team__hover-block {
     display: flex;
     height: 0rem;
+    transition: height .3s;
     overflow: hidden;
 
     @include tablets {
