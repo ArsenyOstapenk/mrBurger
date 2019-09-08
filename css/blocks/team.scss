@@ -77,13 +77,17 @@
 
 .team__member {
     cursor: pointer;
+    margin-bottom: 2.12rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .team__member--active {
 
     & .team__triangle {
         border-top-color: #f9b43b;
-        animation: triangle ;
+        transform: rotate(180deg);
+        transition: transform .5s;
     }
 
     & .team__name h2 {
@@ -91,18 +95,12 @@
     }
 
     & .team__hover-block {
-        display: flex;
-    }
-}
+        height: 7rem;
+        transition: height .3s;
 
-@keyframes triangle {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(180deg);
-        transform-origin: 50% 50%;
+        @include tablets {
+            height: 12rem;
+        }
     }
 }
 
@@ -115,13 +113,14 @@
     border-top-color: #fff;
     border-bottom-width: 0;
     margin: .63rem .56rem 0 0;
+    transform: rotate(0deg);
+    transition: transform .5s;
 }
 
 .team__hover-block {
-    display: none;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-bottom: 2.12rem;
+    display: flex;
+    height: 0rem;
+    overflow: hidden;
 
     @include tablets {
         flex-direction: column;

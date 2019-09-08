@@ -1,3 +1,7 @@
+
+
+
+
 //слайдер
 
 const left = document.querySelector('#left');
@@ -21,7 +25,6 @@ right.addEventListener('click', function (e) {
       currentRight = minRight;
       slider.style.left = currentRight + '%';
    }
-   
 })
 
 left.addEventListener('click', function (e) {
@@ -55,27 +58,6 @@ cross.addEventListener('click', function (e) {
    hoverMenu.style.display = 'none';
 })
 
-// right.addEventListener ('click', function (e) {
-//    e.preventDefault();
-
-//    loop("right");
-// });
-
-// left.addEventListener('click', function (e) {
-//    e.preventDefault();
-
-//    loop("left");
-// });
-
-// function loop (direction) {
-
-//    if (direction === "right"){
-//       slider.appendChild(slider.firstElementChild);
-//    }else{
-//       slider.insertBefore(slider.lastElementChild, slider.firstElementChild);
-//    }
-// };
-
 //accordeon
 
 const menu = document.querySelector('.menu');
@@ -104,7 +86,6 @@ for (let i=0; i<menuBlockLenght; i++) {
    })
 }
 
-
 //team
 
 const teamBlockRight = document.querySelector('.team__block-right');
@@ -123,14 +104,14 @@ for (let i=0; i<teamMemberLenght; i++) {
       e.stopPropagation();
       e.preventDefault();
 
+
       if (teamMember[i].classList.contains('team__member--active')){
          teamMember[i].classList.remove('team__member--active')
       }else{
          for(let i=0; i<teamMemberLenght; i++){
-            // teamMember[i].classList.remove('team__member--active')
+            teamMember[i].classList.remove('team__member--active')
          }
          teamMember[i].classList.add('team__member--active')
       }
    })
-   
 }

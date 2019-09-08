@@ -936,40 +936,38 @@ template {
   align-items: flex-start; }
 
 .team__member {
-  cursor: pointer; }
+  cursor: pointer;
+  margin-bottom: 2.12rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
 
 .team__member--active .team__triangle {
   border-top-color: #f9b43b;
-  -webkit-animation: triangle;
-  animation: triangle; }
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  -o-transition: transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s; }
 
 .team__member--active .team__name h2 {
   color: #f9b43b; }
 
 .team__member--active .team__hover-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
-@-webkit-keyframes triangle {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%; } }
-
-@keyframes triangle {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%; } }
+  height: 7rem;
+  -webkit-transition: height .3s;
+  -o-transition: height .3s;
+  transition: height .3s; }
+  @media screen and (max-width: 768px) {
+    .team__member--active .team__hover-block {
+      height: 12rem; } }
 
 .team__triangle {
   display: -webkit-box;
@@ -981,18 +979,22 @@ template {
   border-top-width: .44rem;
   border-top-color: #fff;
   border-bottom-width: 0;
-  margin: .63rem .56rem 0 0; }
+  margin: .63rem .56rem 0 0;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  -o-transition: transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s; }
 
 .team__hover-block {
-  display: none;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin-bottom: 2.12rem; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 0rem;
+  overflow: hidden; }
   @media screen and (max-width: 768px) {
     .team__hover-block {
       -webkit-box-orient: vertical;
