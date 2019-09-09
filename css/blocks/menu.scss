@@ -17,6 +17,10 @@
     position: absolute;
     top: 10%;
     left: 10%;
+
+    @include phone {
+        font-size: 3.5rem;
+    }
 }
 
 .menu__list {
@@ -28,6 +32,10 @@
     display: block;
     height: 100%;
     position: relative;
+
+    @include phone {
+        width: 2rem;
+    }
 }
 
 .trigger__text {
@@ -45,6 +53,10 @@
     font-weight: 400;
     line-height: 4rem;
     padding-left: 1.25rem;
+
+    @include phone {
+        font-size: 1.5rem;
+    }
 }
 
 .menu__content {
@@ -80,6 +92,10 @@
 
     & .menu__content {
         width: 34.38rem;
+
+        @include phone {
+            width: 16.5rem;
+        }
     }
 
     & .menu__text {

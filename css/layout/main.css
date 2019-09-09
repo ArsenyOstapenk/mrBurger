@@ -937,9 +937,6 @@ template {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   background: #313436;
   opacity: .95;
   position: absolute;
@@ -951,23 +948,37 @@ template {
   height: 100vh; }
   @media screen and (max-width: 768px) {
     .team__block-right {
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
       width: 100%;
       left: 0; } }
 
 .team__block-in {
-  padding: auto;
-  padding-left: -50%; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  padding-left: -50%;
+  height: 100%; }
   @media screen and (max-width: 768px) {
     .team__block-in {
       text-align: center; } }
   @media screen and (max-width: 480px) {
     .team__block-in {
-      padding-top: 5.19rem; } }
+      padding-top: 2.19rem; } }
 
 .team__title {
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #f9b43b;
   font-family: gagalin-regular;
   font-size: 4.5rem;
@@ -977,12 +988,16 @@ template {
   @media screen and (max-width: 480px) {
     .team__title {
       font-size: 3.5rem;
-      margin: 0 0 1rem 0; } }
+      margin: 0 0 1rem 0;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; } }
 
 .team__name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-right: 0;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -1025,16 +1040,10 @@ template {
 .team__member {
   cursor: pointer;
   margin-bottom: 2.12rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column; }
+  width: 100%; }
   @media screen and (max-width: 480px) {
     .team__member {
-      margin-bottom: 1rem; } }
+      margin-bottom: .8rem; } }
 
 .team__member--active .team__triangle {
   border-top-color: #f9b43b;
@@ -1171,6 +1180,9 @@ template {
   position: absolute;
   top: 10%;
   left: 10%; }
+  @media screen and (max-width: 480px) {
+    .menu__title {
+      font-size: 3.5rem; } }
 
 .menu__list {
   display: -webkit-box;
@@ -1182,6 +1194,9 @@ template {
   display: block;
   height: 100%;
   position: relative; }
+  @media screen and (max-width: 480px) {
+    .menu__trigger {
+      width: 2rem; } }
 
 .trigger__text {
   position: absolute;
@@ -1202,6 +1217,9 @@ template {
   font-weight: 400;
   line-height: 4rem;
   padding-left: 1.25rem; }
+  @media screen and (max-width: 480px) {
+    .trigger__text {
+      font-size: 1.5rem; } }
 
 .menu__content {
   height: 100%;
@@ -1233,6 +1251,9 @@ template {
 
 .menu__block--active .menu__content {
   width: 34.38rem; }
+  @media screen and (max-width: 480px) {
+    .menu__block--active .menu__content {
+      width: 16.5rem; } }
 
 .menu__block--active .menu__text {
   display: block; }
@@ -1365,12 +1386,18 @@ template {
   display: flex; }
 
 .title__form {
+  text-align: center;
   color: #f9b43b;
   font-family: gagalin-regular;
   font-size: 4.5rem;
   font-weight: 400;
   line-height: 4rem;
   margin-bottom: 3.13rem; }
+  @media screen and (max-width: 480px) {
+    .title__form {
+      font-size: 2.5rem;
+      margin: 1.13rem auto;
+      line-height: 2rem; } }
 
 .form__input {
   width: 100%;
@@ -1379,7 +1406,22 @@ template {
   border: none;
   padding: 0.3125rem;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: ubuntu-regular; }
+
+.form__input-textarea {
+  min-width: 100%;
+  min-height: 6.4375rem;
+  background: #fff;
+  border-radius: .19rem;
+  border: none;
+  padding: 0.3125rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: ubuntu-regular; }
+  @media screen and (max-width: 480px) {
+    .form__input-textarea {
+      min-height: 3.75rem; } }
 
 .form__block-title {
   color: #fff;
@@ -1401,13 +1443,6 @@ template {
   -ms-flex: 1;
   flex: 1; }
 
-textarea {
-  max-width: 100%;
-  height: 50%;
-  padding: 0.9375rem;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-
 .radio__section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1415,6 +1450,9 @@ textarea {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-bottom: 1.25rem; }
+  @media screen and (max-width: 480px) {
+    .radio__section {
+      margin-bottom: .5rem; } }
 
 .radio {
   display: -webkit-inline-box;
@@ -1425,6 +1463,9 @@ textarea {
   align-items: center;
   cursor: pointer;
   margin: 0 1.25rem 1.56rem 0; }
+  @media screen and (max-width: 480px) {
+    .radio {
+      margin: 0 1.25rem .5rem 0; } }
 
 .radio__input {
   display: none;
@@ -1566,6 +1607,13 @@ textarea {
   width: 100%;
   height: 5rem;
   margin-bottom: 0; }
+  @media screen and (max-width: 480px) {
+    .footer {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      text-align: center; } }
 
 .footer__phone {
   width: .75rem;
@@ -1588,6 +1636,9 @@ textarea {
   font-size: .88rem;
   font-weight: 300;
   line-height: 1.5rem; }
+  @media screen and (max-width: 480px) {
+    .footer__contacts-tel h3 {
+      margin-bottom: -.9rem; } }
 
 .contacts__phone {
   font-style: normal;
@@ -1608,6 +1659,12 @@ textarea {
   -ms-flex-pack: start;
   justify-content: start;
   width: 50%; }
+  @media screen and (max-width: 480px) {
+    .footer-contacts-soc {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      margin-top: .4rem; } }
 
 .footer__social {
   display: -webkit-inline-box;
