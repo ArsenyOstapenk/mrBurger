@@ -69,6 +69,10 @@
       font-size: .71rem;
 
    }
+
+   @include phone {
+      display: none;
+   }
 }
 
 .reviews__title {
@@ -78,5 +82,14 @@
 
    @include tablets {
       margin-bottom: 1rem;
+   }
+}
+
+.zzz:after {
+   content: 'подробнее';
+
+
+   @include phone {
+      content: 'читать отзыв';
    }
 }

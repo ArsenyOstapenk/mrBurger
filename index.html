@@ -338,7 +338,9 @@
                      <p>Мысли все о них и о них, и о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал,
                         что булочки могут быть такими мягкими, котлета такой сочной, а сыр таким расплавленным.</p>
                   </div>
-                  <button class="reviews__button" type="button">Подробнее</button>
+                  <button class="reviews__button" type="button">
+                     <div class="zzz"></div>
+                  </button>
                </div>
             </li>
             <li class="reviews__block" style="background-image: url(./img/avtor_2.png)">
@@ -349,7 +351,9 @@
                         что булочки могут
                         быть такими мягкими, котлета такой сочной, а сыр таким расплавленным.</p>
                   </div>
-                  <button class="reviews__button" type="button">Подробнее</button>
+                  <button class="reviews__button" type="button">
+                     <div class="zzz"></div>
+                  </button>
                </div>
             </li>
             <li class="reviews__block" style="background-image: url(./img/avtor_3.png)">
@@ -360,7 +364,9 @@
                         что булочки могут
                         быть такими мягкими, котлета такой сочной, а сыр таким расплавленным.</p>
                   </div>
-                  <button class="reviews__button" type="button">Подробнее</button>
+                  <button class="reviews__button" type="button">
+                     <div class="zzz"></div>
+                  </button>
                </div>
             </li>
             <li class="reviews__block" style="background-image: url(./img/avtor_4.png)">
@@ -371,7 +377,9 @@
                         что булочки могут
                         быть такими мягкими, котлета такой сочной, а сыр таким расплавленным.</p>
                   </div>
-                  <button class="reviews__button" type="button">Подробнее</button>
+                  <button class="reviews__button" type="button">
+                     <div class="zzz"></div>
+                  </button>
                </div>
             </li>
             <li class="reviews__block" style="background-image: url(./img/avtor_5.png)">
@@ -382,7 +390,9 @@
                         что булочки могут
                         быть такими мягкими, котлета такой сочной, а сыр таким расплавленным.</p>
                   </div>
-                  <button class="reviews__button" type="button">Подробнее</button>
+                  <button class="reviews__button" type="button">
+                     <div class="zzz"></div>
+                  </button>
                </div>
             </li>
             <li class="reviews__block" style="background-image: url(./img/avtor_6.png)">
@@ -393,7 +403,9 @@
                         что булочки могут
                         быть такими мягкими, котлета такой сочной, а сыр таким расплавленным.</p>
                   </div>
-                  <button class="reviews__button" type="button">Подробнее</button>
+                  <button class="reviews__button" type="button">
+                     <div class="zzz"></div>
+                  </button>
                </div>
             </li>
             <li class="reviews__block" style="background-image: url(./img/avtor_7.png)">
@@ -404,7 +416,9 @@
                         что булочки могут
                         быть такими мягкими, котлета такой сочной, а сыр таким расплавленным.</p>
                   </div>
-                  <button class="reviews__button" type="button">Подробнее</button>
+                  <button class="reviews__button" type="button">
+                     <div class="zzz"></div>
+                  </button>
                </div>
             </li>
             <li class="reviews__block" style="background-image: url(./img/avtor_8.png)">
@@ -415,7 +429,9 @@
                         что булочки могут
                         быть такими мягкими, котлета такой сочной, а сыр таким расплавленным.</p>
                   </div>
-                  <button class="reviews__button" type="button">Подробнее</button>
+                  <button class="reviews__button" type="button">
+                     <div class="zzz"></div>
+                  </button>
                </div>
             </li>
          </ul>
@@ -434,58 +450,65 @@
          <div class="container container__form">
             <div class="title__form">закажите доставку</div>
             <div class="form__area">
-               <form action="" class="form__elem">
+               <form action="" class="form__elem" id="myForm">
                   <div class="form__column">
                      <div class="form__row">
                         <label class="form__block">
                            <div class="form__block-title">Имя</div>
-                           <input type="text" class="form__input">
+                           <input type="text" name="name" class="form__input" required>
+                           <div class="error"></div>
                         </label>
                         <label class="form__block">
                            <div class="form__block-title">Телефон</div>
-                           <input type="text" class="form__input">
+                           <input type="text" name="phone" class="form__input" id="phone" required>
+                           <div class="error"></div>
+
                         </label>
                      </div>
                      <div class="form__row">
                         <label class="form__block">
                            <div class="form__block-title">Улица</div>
-                           <input type="text" class="form__input">
+                           <input type="text" name="street" class="form__input" required>
+                           <div class="error"></div>
+
                         </label>
                      </div>
                      <div class="form__row">
                         <label class="form__block">
-                           <div class="form__block-title">Дом</div>
-                           <input type="text" class="form__input">
+                           <div class="form__block-title" >Дом</div>
+                           <input type="text" name="house" class="form__input" id="justNumber" required>
+                           <div class="error"></div>
+
                         </label>
                         <label class="form__block">
                            <div class="form__block-title">Корпус</div>
-                           <input type="text" class="form__input">
+                           <input type="text" name="corps" class="form__input">
                         </label>
                         <label class="form__block">
-                           <div class="form__block-title">Квартира</div>
-                           <input type="text" class="form__input">
+                           <div class="form__block-title" >Квартира</div>
+                           <input type="text" name="apartment" class="form__input" id="justNumberTwo">
                         </label>
                         <label class="form__block">
-                           <div class="form__block-title">Этаж</div>
-                           <input type="text" class="form__input">
+                           <div class="form__block-title" >Этаж</div>
+                           <input type="text" name="floor" class="form__input" id="justNumberThree">
                         </label>
                      </div>
                   </div>
                   <div class="form__column">
                      <label class="form__block-area">
                         <div class="form__block-title">Комментарий</div>
-                        <textarea class="form__input-textarea"></textarea>
+                        <textarea name="comments" class="form__input-textarea"></textarea>
                      </label>
                      <div class="radio__section">
                         <label class="radio">
-                           <input name="radio__name" type="radio" checked="checked" class=radio__input>
+                           <input name="cash" value="yes" type="radio" checked="checked" class=radio__input>
                            <div class="radio__check">
                               <div class="radio__check-circle"></div>
                            </div>
                            <div class="radio__block">Потребуется сдача</div>
                         </label>
                         <label class="radio">
-                           <input name="radio__name" type="radio" class="radio__input">
+                           <input name="cash" value="no" type="radio" class="radio__input">
                            <div class="radio__check">
                               <div class="radio__check-circle"></div>
                            </div>
@@ -493,14 +516,14 @@
                         </label>
                         <div class="radio">
                            <label class="checkbox">
-                              <input type="checkbox" class="checkbox__input" checked />
+                              <input type="checkbox" name="dontCall" class="checkbox__input" checked />
                               <span class="checkbox__mark"></span>
                            </label>
                            <span class="checkbox__content">Не перезванивать</span>
                         </div>
                      </div>
                      <div class="button__section">
-                        <button type="submit" class="btn">Заказать</button>
+                        <button id="sendButton" type="submit" class="btn">Заказать</button>
                         <button type="reset" class="res">Очистить</button>
                      </div>
                   </div>
