@@ -49,7 +49,7 @@
     margin-bottom: 3.13rem;
 
     @include phone {
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin: 1.13rem auto;
         line-height: 2rem;
     }
@@ -68,10 +68,10 @@
 
 .form__input-textarea {
     min-width: 100%;
-    // max-width: rem(440px);
-    // max-height: rem(103px);
+    max-width: 100%;
+    max-height: rem(150px);
     min-height: rem(103px);
-    background: #fff;
+    resize: vertical;
     border-radius: .19rem;
     border: none;
     padding: rem(5px);
@@ -79,8 +79,7 @@
     font-family: ubuntu-regular;
 
     @include phone {
-        min-height: rem(60px);
-
+        min-height: rem(50px);
     }
 }
 

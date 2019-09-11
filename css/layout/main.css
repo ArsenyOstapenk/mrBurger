@@ -1337,10 +1337,10 @@ template {
     .reviews__title {
       margin-bottom: 1rem; } }
 
-.zzz:after {
+.reviews__button:after {
   content: 'подробнее'; }
   @media screen and (max-width: 480px) {
-    .zzz:after {
+    .reviews__button:after {
       content: 'читать отзыв'; } }
 
 .work {
@@ -1405,7 +1405,7 @@ template {
   margin-bottom: 3.13rem; }
   @media screen and (max-width: 480px) {
     .title__form {
-      font-size: 2.5rem;
+      font-size: 2rem;
       margin: 1.13rem auto;
       line-height: 2rem; } }
 
@@ -1421,8 +1421,10 @@ template {
 
 .form__input-textarea {
   min-width: 100%;
+  max-width: 100%;
+  max-height: 9.375rem;
   min-height: 6.4375rem;
-  background: #fff;
+  resize: vertical;
   border-radius: .19rem;
   border: none;
   padding: 0.3125rem;
@@ -1431,7 +1433,7 @@ template {
   font-family: ubuntu-regular; }
   @media screen and (max-width: 480px) {
     .form__input-textarea {
-      min-height: 3.75rem; } }
+      min-height: 3.125rem; } }
 
 .form__block-title {
   color: #fff;

@@ -147,61 +147,112 @@ phone.addEventListener ('keydown', function (e) {
    }
 })
 
-const justNumber = document.querySelector('#justNumber');
-
-
-justNumber.addEventListener ('keydown', function (e) {
-   let isNumber = false;
-   let isBackspace = false;
-
-   if (e.key >= 0 || e.key <= 9) {
-      isNumber = true;
-   }
-
-   if (e.key == 'Backspace') {
-      isBackspace = true;
-   }
-   
-   if (!isNumber && !isBackspace) {
-      e.preventDefault();
-   }
-})
-
 //форма - формочка
+
+
+
+
+
+
+
+
 
 const myForm = document.querySelector ('#myForm');
 const sendButton = document.querySelector ('#sendButton');
+const formRow = document.querySelector('.form__row-block');
 
 sendButton.addEventListener ('click', function (e) {
    e.preventDefault();
 
    if(validateForm(myForm)) {
       console.log('всё заебумба!!!');
-   }
 
-   // myForm.elements.name.value;
-   // myForm.elements.phone.value;
-   // myForm.elements.street.value;
-   // myForm.elements.house.value;
-   // myForm.elements.corps.value;
-   // myForm.elements.apartment.value;
-   // myForm.elements.floor.value;
-   // myForm.elements.comments.value;
-   // myForm.elements.cash.checked;
-   // myForm.elements.dontCall.checked;
+      let data = new FormData;
+      data.append("name", myForm.elements.name.value);
+      data.append("phone", myForm.elements.phone.value);
+      data.append("street", myForm.elements.street.value);
+      data.append("house", myForm.elements.house.value);
+      data.append("corps", myForm.elements.corps.value);
+      data.append("apartment", myForm.elements.apartment.value);
+      data.append("floor", myForm.elements.floor.value);
+      data.append("comment", myForm.elements.comment.value);
+      data.append("to", "my@gmail.com");
 
-   if (myForm.elements.cash.value == 'yes') {
-      console.log('наличный расчёт'); 
-   }else{
-      console.log('безналичный расчёт'); 
-   }
+      const xhr = new XMLHttpRequest();
+      xhr.responseType = "json";
+      xhr.open("POST", "https://webdev-api.loftschool.com/sendmail/");
+      xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+      xhr.send(data);
+      xhr.addEventListener('load', ()=> {
+         if (xhr.response.status == 0) {
+            const element = document.createElement('div');
+            formRow.appendChild(element);
+            element.classList.add('message__modal');
 
-   if (myForm.elements.dontCall = true) {
-      console.log('не перезванивать!');
-   }else{
-      console.log('клиент ждёт звонка!');
+            const element2 = document.createElement('div');
+            element.appendChild(element2);
+            element2.classList.add('message__send');
+
+            const element3 = document.createElement('div');
+            element2.appendChild(element3);
+            element3.classList.add('message__text');
+            element3.textContent = 'Сообщение не отправлено';
+
+            const element4 = document.createElement('div');
+            element2.appendChild(element4);
+            element4.classList.add('btn');
+            element4.textContent = 'Закрыть';
+
+            element4.addEventListener('click', function () {
+               formRow.removeChild(element);
+            })
+         }else{
+            const element = document.createElement('div');
+            formRow.appendChild(element);
+            element.classList.add('message__modal');
+
+            const element2 = document.createElement('div');
+            element.appendChild(element2);
+            element2.classList.add('message__send');
+
+            const element3 = document.createElement('div');
+            element2.appendChild(element3);
+            element3.classList.add('message__text');
+            element3.textContent = 'Сообщение отправлено';
+
+            const element4 = document.createElement('div');
+            element2.appendChild(element4);
+            element4.classList.add('btn');
+            element4.textContent = 'Закрыть';
+
+            element4.addEventListener('click', function () {
+               formRow.removeChild(element);
+            })
+         }
+      sendButton.disabled = false;
+      })
+
+      if (myForm.elements.cash.value == 'yes') {
+         console.log('наличный расчёт');
+      } else {
+         console.log('безналичный расчёт');
+      }
+
+      if (myForm.elements.dontCall = true) {
+         console.log('не перезванивать!');
+      } else {
+         console.log('клиент ждёт звонка!');
+      }
    }
 })
+
+
+
+
+
+
+
+
 
 function validateForm (form) {
    let valid = true;
@@ -217,12 +268,17 @@ function validateForm (form) {
    if (!validateField(form.elements.house)) {
       valid = false;
    }
+   if (!validateField(form.elements.comment)) {
+      valid = false;
+   }
+
+   return valid;
 }
 
 function validateField (field) {
 
    if(!field.checkValidity()) {
-      field.nextElementSibling.textContent = field.validationMessage;
+      field.nextElementSibling.textContent = 'заполните это поле';//field.validationMessage;
 
       return false;
    }else{
@@ -231,43 +287,3 @@ function validateField (field) {
       return true;
    }
 }
-
-
-// отправка данных на сервер
-
-sendButton.addEventListener ('click', e => {
-   e.preventDefault();
-
-   if(validateForm(myForm)) {
-
-      const xhr = new XMLHttpRequest();
-      xhr.responseType = 'json';
-      xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
-      xhr.send(JSON.stringify(data));
-      xhr.addEventListener('load', () => {
-         if (xhr.response.status) {
-            console.log('заебумба');
-         }
-      })
-   }
-})  
-
-
-
-
-// const data = FormData();
-      
-      // data.append("name", myForm.elements.name.value)
-      
-      // {
-      //    name: myForm.elements.name.value,
-      //    phone: myForm.elements.phone.value,
-      //    street: myForm.elements.street.value,
-      //    house: myForm.elements.house.value,
-      //    corps: myForm.elements.corps.value,
-      //    apartament: myForm.elements.apartment.value,
-      //    floor: myForm.elements.floor.value,
-      //    comments: myForm.elements.comments.value,
-      //    cash: myForm.elements.cash.checked,
-      //    dontCall: myForm.elements.dontCall.checked
-      // }
