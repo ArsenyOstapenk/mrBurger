@@ -1343,6 +1343,70 @@ template {
     .reviews__button:after {
       content: 'читать отзыв'; } }
 
+.overlay {
+  position: absolute;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(1, 1, 1, 0.8);
+  overflow: hidden;
+  display: none;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 1000; }
+
+.popup {
+  position: relative;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 40%;
+  padding: 0.9375rem 2.5rem;
+  border-radius: 0.3125rem; }
+  @media screen and (max-width: 480px) {
+    .popup {
+      max-width: 70%; } }
+
+.popup__text {
+  font-family: ubuntu-regular; }
+
+.close__button {
+  height: 1.875rem;
+  width: 1.875rem;
+  border-radius: 50%;
+  background-color: #e45028;
+  color: #fff;
+  font-family: ubuntu-regular;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer; }
+
+.close__button-reviews {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: -0.625rem;
+  margin-right: -0.625rem; }
+
 .work {
   background: url(../../img/bg_work.png) center center no-repeat;
   background-size: cover;
@@ -1895,6 +1959,64 @@ template {
   height: 20%;
   width: 100%;
   background-color: #fff; }
+
+.message__modal {
+  position: absolute;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(1, 1, 1, 0.8);
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.message__send {
+  border-radius: 0.3125rem;
+  padding: 0.9375rem 2.5rem;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.message__text {
+  font-family: ubuntu-regular;
+  margin-bottom: 0.625rem; }
+
+.close__button {
+  height: 1.875rem;
+  width: 1.875rem;
+  border-radius: 50%;
+  background-color: #e45028;
+  color: #fff;
+  font-family: ubuntu-regular;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer; }
 
 @font-face {
   font-family: ubuntu-regular;

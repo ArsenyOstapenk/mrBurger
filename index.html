@@ -345,13 +345,9 @@
                <div class="reviews__block-hover">
                   <div class="reviews__title">Константин Спилберг</div>
                   <div class="reviews__text">
-                     <p>Мысли все о них и о них, и о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал,
-                        что булочки могут
-                        быть такими мягкими, котлета такой сочной, а сыр таким расплавленным.</p>
+                     <p>Отзыв писал очкарик</p>
                   </div>
-                  <button class="reviews__button" type="button">
-                     <div class="zzz"></div>
-                  </button>
+                  <button class="reviews__button" type="button"></button>
                </div>
             </li>
             <li class="reviews__block" style="background-image: url(./img/avtor_3.png)">
@@ -369,9 +365,7 @@
                <div class="reviews__block-hover">
                   <div class="reviews__title">Константин Спилберг</div>
                   <div class="reviews__text">
-                     <p>Мысли все о них и о них, и о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал,
-                        что булочки могут
-                        быть такими мягкими, котлета такой сочной, а сыр таким расплавленным.</p>
+                     <p>Отзыв писал чувак в кепке</p>
                   </div>
                   <button class="reviews__button" type="button"></button>
                </div>
@@ -391,9 +385,7 @@
                <div class="reviews__block-hover">
                   <div class="reviews__title">Константин Спилберг</div>
                   <div class="reviews__text">
-                     <p>Мысли все о них и о них, и о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал,
-                        что булочки могут
-                        быть такими мягкими, котлета такой сочной, а сыр таким расплавленным.</p>
+                     <p>Я очкастая баба с тоннелями</p>
                   </div>
                   <button class="reviews__button" type="button"></button>
                </div>
@@ -421,6 +413,13 @@
                </div>
             </li>
          </ul>
+
+         <div class="overlay">
+            <div class="popup">
+               <div class="popup__text"></div>
+               <button id="reviews-button" class="close__button close__button-reviews">X</button>
+            </div>
+         </div>
       </section>
       <!-- окончание страницы отзывы -->
       <!-- начало секции как мы работаем -->
@@ -507,7 +506,7 @@
                      </div>
                      <div class="button__section">
                         <button id="sendButton" type="submit" class="btn">Заказать</button>
-                        <button type="reset" class="res">Очистить</button>
+                        <button id="resetButton" type="reset" class="res">Очистить</button>
                      </div>
                   </div>
                </form>

@@ -93,3 +93,58 @@
       content: 'читать отзыв';
    }
 }
+
+.overlay {
+   position: absolute;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   height: 100vh;
+   background: rgba(1, 1, 1, .8);
+   overflow: hidden;
+   display: none;
+   justify-content: center;
+   align-items: center;
+   z-index: 1000;
+}
+
+.popup {
+
+   position: relative;
+   background: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   max-width: 40%;
+   padding: rem(15px) rem(40px);
+   border-radius: rem(5px);
+
+   @include phone {
+      max-width: 70%;
+   }
+}
+
+.popup__text {
+   font-family: ubuntu-regular;
+}
+
+.close__button {
+   height: rem(30px);
+   width: rem(30px);
+   border-radius: 50%;
+   background-color: #e45028;
+   color: #fff;
+   font-family: ubuntu-regular;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+}
+
+.close__button-reviews {
+   position: absolute;
+   top: 0;
+   right: 0;
+   margin-top: rem(-10px);
+   margin-right: rem(-10px);
+}

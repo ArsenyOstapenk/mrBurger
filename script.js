@@ -150,16 +150,10 @@ phone.addEventListener ('keydown', function (e) {
 //форма - формочка
 
 
-
-
-
-
-
-
-
 const myForm = document.querySelector ('#myForm');
 const sendButton = document.querySelector ('#sendButton');
 const formRow = document.querySelector('.form__row-block');
+const resetButton = document.querySelector('#resetButton');
 
 sendButton.addEventListener ('click', function (e) {
    e.preventDefault();
@@ -196,15 +190,16 @@ sendButton.addEventListener ('click', function (e) {
             const element3 = document.createElement('div');
             element2.appendChild(element3);
             element3.classList.add('message__text');
-            element3.textContent = 'Сообщение не отправлено';
+            element3.textContent = 'Сообщение не отправлено :( проблемы с сервером ';
 
             const element4 = document.createElement('div');
             element2.appendChild(element4);
-            element4.classList.add('btn');
-            element4.textContent = 'Закрыть';
+            element4.classList.add('close__button');
+            element4.textContent = 'X';
 
             element4.addEventListener('click', function () {
                formRow.removeChild(element);
+               resetButton.click();
             })
          }else{
             const element = document.createElement('div');
@@ -222,11 +217,20 @@ sendButton.addEventListener ('click', function (e) {
 
             const element4 = document.createElement('div');
             element2.appendChild(element4);
-            element4.classList.add('btn');
-            element4.textContent = 'Закрыть';
+            element4.classList.add('close__button');
+            element4.textContent = 'X';
 
             element4.addEventListener('click', function () {
                formRow.removeChild(element);
+               resetButton.click();
+            })
+            
+            element.addEventListener('click', e => {
+               let elem = e.target
+               if (elem.classList != 'message__send' && elem.classList != 'message__text') {
+                  formRow.removeChild(element);
+                  resetButton.click();
+               }
             })
          }
       sendButton.disabled = false;
@@ -245,12 +249,6 @@ sendButton.addEventListener ('click', function (e) {
       }
    }
 })
-
-
-
-
-
-
 
 
 
@@ -282,8 +280,42 @@ function validateField (field) {
 
       return false;
    }else{
-      field.textContent = '';
+      field.nextElementSibling.textContent = '';
 
       return true;
    }
 }
+
+
+
+//модалка отзывов
+
+const reviews = document.querySelector('.reviews');
+const overlay = document.querySelector('.overlay');
+const popup = document.querySelector('.popup__text');
+const reviewsButton = document.querySelector('#reviews-button');
+
+
+
+reviews.addEventListener('click', e => {
+   let elem = e.target;
+
+   if (elem.tagName === 'BUTTON') {
+      let modalText = elem.previousElementSibling.textContent;
+      popup.textContent = modalText;
+      overlay.style.display = 'flex';
+   }
+
+   
+})
+
+reviewsButton.addEventListener('click', function () {
+   overlay.style.display = 'none';
+})
+
+overlay.addEventListener('click', e => {
+   let elem = e.target
+   if (elem.classList != 'popup' && elem.classList != 'popup__text') {
+      overlay.style.display = 'none';
+   }
+})
