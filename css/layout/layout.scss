@@ -29,7 +29,7 @@ body {
 
 .container {
   width: 95%;
-  max-width: 940px;
+  max-width: rem(940px);
   height: 100%;
   margin: 0 auto;
   display: flex;

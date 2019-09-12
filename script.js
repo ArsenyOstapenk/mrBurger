@@ -305,8 +305,6 @@ reviews.addEventListener('click', e => {
       popup.textContent = modalText;
       overlay.style.display = 'flex';
    }
-
-   
 })
 
 reviewsButton.addEventListener('click', function () {
