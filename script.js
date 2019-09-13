@@ -227,7 +227,7 @@ sendButton.addEventListener ('click', function (e) {
             
             element.addEventListener('click', e => {
                let elem = e.target
-               if (elem.classList != 'message__send' && elem.classList != 'message__text') {
+               if (elem.classList != 'message__send' && elem.classList != 'message__text' && elem.classList != 'close__button') {
                   formRow.removeChild(element);
                   resetButton.click();
                }
@@ -317,3 +317,119 @@ overlay.addEventListener('click', e => {
       overlay.style.display = 'none';
    }
 })
+
+
+
+
+// dots
+
+
+$(function(){
+   var generateDots = function () {
+
+      $('.section').each(function () {
+         let dot = $('<li>', {
+            attr : {
+               class: 'fixed-menu__item'
+            },
+            html : '<button type="button" class="fixed-menu__dot"></button>'
+         });
+
+         $('.fixed-menu').append(dot);
+      })
+   }
+
+   generateDots();
+})
+
+
+//perekluchenie po dots
+
+
+$('.fixed-menu__item').on('click', e => {
+
+   e.preventDefault();
+
+
+   $('.fixed-menu__item').addClass('fixed-menu__item--active');
+
+
+   $('html, body').animate({
+      'scrollTop': $(window).scrollTop() + $(window).height()
+   }, 1000)
+
+})
+
+
+//button arrowScroll
+
+
+$('.fixed-menu').on('click', e => {
+   $('html, body').animate({
+      'scrollTop': $(window).scrollTop() + $(window).height()
+   }, 1000)
+});
+
+
+
+
+
+
+$('.arrow-scroll__btn').on('click', e => {
+   $('html, body').animate({
+      'scrollTop': $(".section--block-two").offset().top
+   }, 1000)
+});
+
+$('.nav__section-button').on('click', e => {
+   $('html, body').animate({
+      'scrollTop': $(".form").offset().top
+   }, 1000)
+});
+
+
+//one scrole section
+
+
+// $('.wrapper').on('wheel', e => {
+//    $('html, body').animate({
+//       'scrollTop': $(window).scrollTop() + $(window).height()
+//    }, 600)
+// })
+
+$(function(){
+   $('.fixed-menu').on('click', function(e) {
+
+      e.preventDefault();
+
+      let $this = $(this);
+      let container = $this.closest('body');
+      let items = container.find('.section');
+      let activeSection = items.filter('.fixed-menu__item--active');
+      let reqItem = activeSection.next();
+      let reqIndex = reqItem.index();
+      let window = $('html, body');
+      let duration = 1000;
+
+
+      if (reqItem.length) {
+         window.animate({
+            'scrollTop': ''
+         }, duration, function() {
+               activeSection.removeClass('fixed-menu__item--active');
+               reqItem.addClass('fixed-menu__item--active');
+         })
+      }
+   })
+
+
+
+
+   const moveSection = function (container, slideNum) {
+
+      let items = container.find('.section');
+      let  
+   }
+})
+
+
