@@ -482,7 +482,14 @@ $(document).on('keydown', e => {
    }, 1300);
 });
 
-$('.wrapper').on('touchmove', e => e.preventDefault())
+
+
+
+// $('.wrapper').on('touchmove', e => e.preventDefault())
+
+
+
+
 
 
 $('[data-scroll-to]').on('click', e => {
