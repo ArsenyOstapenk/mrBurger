@@ -1,7 +1,8 @@
 .form {
     background: url(../../img/bg_form.png) center center no-repeat;
     background-size: cover;
-    // height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .form__column {

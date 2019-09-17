@@ -19,7 +19,9 @@ body {
 .section {
   height: 100%;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
 
 .wrapper {
   position: relative;
@@ -1427,7 +1429,13 @@ template {
 
 .form {
   background: url(../../img/bg_form.png) center center no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 .form__column {
   margin-right: 2.5rem; }
