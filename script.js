@@ -485,7 +485,7 @@ $(document).on('keydown', e => {
 
 
 
-// $('.wrapper').on('touchmove', e => e.preventDefault())
+$('.wrapper').on('touchmove', e => e.preventDefault())
 
 
 

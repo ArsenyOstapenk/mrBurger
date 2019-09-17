@@ -17,15 +17,11 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  touch-action: none;
+  // touch-action: none;
 }
 
 .section {
   height: 100%;
-
-  @include phone {
-    height: 100%;
-  }
 }
 
 .wrapper {
