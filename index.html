@@ -58,7 +58,7 @@
                </div>
             </div>
             <button type="button" class="arrow-scroll">
-               <svg class="arrow-scroll__btn">
+               <svg class="arrow-scroll__btn" data-scroll-to="1">
                   <use xlink:href="./css/layout/sprite.svg#scroll_down"></use>
                </svg>
             </button>
@@ -396,12 +396,7 @@
                </div>
             </li>
          </ul>
-         <div class="overlay">
-            <div class="popup">
-               <div class="popup__text"></div>
-               <button id="reviews-button" class="close__button close__button-reviews">X</button>
-            </div>
-         </div>
+
       </section>
       <section class="section work">
          <div class="container container__work">
@@ -529,42 +524,46 @@
             </footer>
          </div>
       </section>
-
       </div>
-            <ul class="fixed-menu">
-               <li class="fixed-menu__item fixed-menu__item--active" data-scroll-to="0">
-                  <button type="button" class="fixed-menu__dot"></button>
-               </li>
-               <li class="fixed-menu__item" data-scroll-to="1">
-                  <button type="button" class="fixed-menu__dot"></button>
-               </li>
-               <li class="fixed-menu__item" data-scroll-to="2">
-                  <button type="button" class="fixed-menu__dot"></button>
-               </li>
-               <li class="fixed-menu__item" data-scroll-to="3">
-                  <button type="button" class="fixed-menu__dot"></button>
-               </li>
-               <li class="fixed-menu__item" data-scroll-to="4">
-                  <button type="button" class="fixed-menu__dot"></button>
-               </li>
-               <li class="fixed-menu__item" data-scroll-to="5">
-                  <button type="button" class="fixed-menu__dot"></button>
-               </li>
-               <li class="fixed-menu__item" data-scroll-to="6">
-                  <button type="button" class="fixed-menu__dot"></button>
-               </li>
-               <li class="fixed-menu__item" data-scroll-to="7">
-                  <button type="button" class="fixed-menu__dot"></button>
-               </li>
-               <li class="fixed-menu__item" data-scroll-to="8">
-                  <button type="button" class="fixed-menu__dot"></button>
-               </li>
-            </ul>
-            <div class="form__row-block"></div>
+      <ul class="fixed-menu">
+         <li class="fixed-menu__item fixed-menu__item--active" data-scroll-to="0">
+            <button type="button" class="fixed-menu__dot"></button>
+         </li>
+         <li class="fixed-menu__item" data-scroll-to="1">
+            <button type="button" class="fixed-menu__dot"></button>
+         </li>
+         <li class="fixed-menu__item" data-scroll-to="2">
+            <button type="button" class="fixed-menu__dot"></button>
+         </li>
+         <li class="fixed-menu__item" data-scroll-to="3">
+            <button type="button" class="fixed-menu__dot"></button>
+         </li>
+         <li class="fixed-menu__item" data-scroll-to="4">
+            <button type="button" class="fixed-menu__dot"></button>
+         </li>
+         <li class="fixed-menu__item" data-scroll-to="5">
+            <button type="button" class="fixed-menu__dot"></button>
+         </li>
+         <li class="fixed-menu__item" data-scroll-to="6">
+            <button type="button" class="fixed-menu__dot"></button>
+         </li>
+         <li class="fixed-menu__item" data-scroll-to="7">
+            <button type="button" class="fixed-menu__dot"></button>
+         </li>
+         <li class="fixed-menu__item" data-scroll-to="8">
+            <button type="button" class="fixed-menu__dot"></button>
+         </li>
+      </ul>
+      <div class="form__row-block"></div>
+      <div class="overlay">
+         <div class="popup">
+            <div class="popup__text"></div>
+            <button id="reviews-button" class="close__button close__button-reviews">X</button>
+         </div>
+      </div>
    </div>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
    <script src="./script.js"></script>
 </body>
-
 </html>

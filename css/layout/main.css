@@ -20,9 +20,6 @@ body {
   height: 100%;
   min-height: 40.625rem;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   overflow: hidden; }
   @media screen and (max-width: 768px) {
     .section {
@@ -45,7 +42,6 @@ body {
 .container {
   width: 95%;
   max-width: 58.75rem;
-  height: 100%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1302,7 +1298,20 @@ template {
   bottom: 0;
   background: rgba(68, 70, 70, 0.5);
   color: #fff;
-  padding: 3.13rem 1.19rem 1.19rem 1.19rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.625rem;
   opacity: 0;
   -webkit-transition: opacity .3s;
   -o-transition: opacity .3s;
@@ -1320,6 +1329,15 @@ template {
   color: #fff;
   padding: .94rem;
   font-family: ubuntu-regular; }
+  @media screen and (max-width: 480px) {
+    .reviews__button {
+      font-size: .7rem; } }
+
+.reviews__button:after {
+  content: 'подробнее'; }
+  @media screen and (max-width: 480px) {
+    .reviews__button:after {
+      content: 'читать отзыв'; } }
 
 .reviews__text {
   font-family: ubuntu-regular;
@@ -1330,7 +1348,7 @@ template {
     .reviews__text {
       text-align: center;
       line-height: 1.5rem;
-      font-size: .71rem; } }
+      font-size: 1rem; } }
   @media screen and (max-width: 480px) {
     .reviews__text {
       display: none; } }
@@ -1342,12 +1360,6 @@ template {
   @media screen and (max-width: 768px) {
     .reviews__title {
       margin-bottom: 1rem; } }
-
-.reviews__button:after {
-  content: 'подробнее'; }
-  @media screen and (max-width: 480px) {
-    .reviews__button:after {
-      content: 'читать отзыв'; } }
 
 .overlay {
   position: absolute;
@@ -1873,11 +1885,13 @@ template {
 
 .hover-menu {
   position: absolute;
+  top: 0;
   height: 85vh;
   width: 100%;
   background-color: #333537;
   opacity: .95;
-  display: none; }
+  display: none;
+  z-index: 1000; }
 
 .hover-menu__header {
   display: -webkit-inline-box;
@@ -1967,11 +1981,10 @@ template {
   background-color: #fff; }
 
 .message__modal {
-  position: absolute;
   position: fixed;
   top: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: rgba(1, 1, 1, 0.8);
   overflow: hidden;
   display: -webkit-box;
@@ -1982,7 +1995,8 @@ template {
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  z-index: 1000; }
 
 .message__send {
   border-radius: 0.3125rem;

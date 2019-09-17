@@ -36,7 +36,13 @@
    bottom: 0;
    background: rgba(#444646, .5);
    color: #fff;
-   padding: 3.13rem 1.19rem 1.19rem 1.19rem;
+   // padding: 3.13rem 1.19rem 1.19rem 1.19rem;
+   // padding: auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: rem(10px);
    opacity: 0;
    transition: opacity .3s;
 
@@ -55,6 +61,17 @@
    padding: .94rem;
    font-family: ubuntu-regular;
 
+   @include phone {
+      font-size: .7rem;
+   }
+}
+
+.reviews__button:after {
+   content: 'подробнее';
+
+   @include phone {
+      content: 'читать отзыв';
+   }
 }
 
 .reviews__text {
@@ -66,8 +83,7 @@
    @include tablets {
       text-align: center;
       line-height: 1.5rem;
-      font-size: .71rem;
-
+      font-size: 1rem;
    }
 
    @include phone {
@@ -85,14 +101,6 @@
    }
 }
 
-.reviews__button:after {
-   content: 'подробнее';
-
-
-   @include phone {
-      content: 'читать отзыв';
-   }
-}
 
 .overlay {
    position: absolute;
