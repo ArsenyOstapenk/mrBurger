@@ -21,9 +21,6 @@ body {
   min-height: 40.625rem;
   position: relative;
   overflow: hidden; }
-  @media screen and (max-width: 768px) {
-    .section {
-      min-height: initial; } }
 
 .wrapper {
   position: relative;
@@ -386,7 +383,6 @@ template {
 .section--block-two {
   background: url(../../img/bg_best.png) center center no-repeat;
   background-size: cover;
-  height: 100vh;
   width: 100%; }
 
 .container__block-two {
@@ -632,8 +628,7 @@ template {
 .section--block {
   background: url(../../img/bg_texture.png) center center no-repeat;
   background-size: cover;
-  position: relative;
-  height: 100vh; }
+  position: relative; }
 
 .block1__leftside {
   width: 50%;
@@ -749,7 +744,6 @@ template {
   background: -o-linear-gradient(#f9b43b, #eb8d3a, #f9b43b);
   background: linear-gradient(#f9b43b, #eb8d3a, #f9b43b);
   position: relative;
-  height: 100vh;
   width: 100%; }
 
 .burgers__menu {
@@ -931,7 +925,7 @@ template {
   background: url(../../img/bg_team.png) center center no-repeat;
   background-size: cover;
   position: relative;
-  height: 100vh; }
+  height: 100%; }
 
 .team__block-right {
   display: -webkit-box;
@@ -948,7 +942,7 @@ template {
   bottom: 0;
   left: 50%;
   width: 50%;
-  height: 100vh; }
+  height: 100%; }
   @media screen and (max-width: 768px) {
     .team__block-right {
       width: 100%;
@@ -1171,8 +1165,7 @@ template {
   justify-content: flex-end;
   background: url(../../img/bg_menu.png) center center no-repeat;
   background-size: cover;
-  position: relative;
-  height: 100vh; }
+  position: relative; }
 
 .menu__title {
   color: #ffffff;
@@ -1263,9 +1256,6 @@ template {
 
 .menu__block--active .trigger__text {
   color: #ecad38; }
-
-.section--reviews {
-  height: 100vh; }
 
 .reviews {
   height: 100%;
@@ -1428,13 +1418,11 @@ template {
 .work {
   background: url(../../img/bg_work.png) center center no-repeat;
   background-size: cover;
-  position: relative;
-  height: 100vh; }
+  position: relative; }
 
 .form {
   background: url(../../img/bg_form.png) center center no-repeat;
-  background-size: cover;
-  height: 100vh; }
+  background-size: cover; }
 
 .form__column {
   margin-right: 2.5rem; }
@@ -1686,7 +1674,6 @@ template {
   background: url(../../img/bg_map.png) center center no-repeat;
   background-size: cover;
   position: relative;
-  height: 100vh;
   margin: 0 0; }
 
 .footer {
@@ -1886,7 +1873,7 @@ template {
 .hover-menu {
   position: absolute;
   top: 0;
-  height: 85vh;
+  height: 85%;
   width: 100%;
   background-color: #333537;
   opacity: .95;
