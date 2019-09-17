@@ -20,7 +20,6 @@
    background: url(../../img/bg_texture.png) center center no-repeat;
    background-size: cover;
    position: relative;
-   // height: 100vh;
 }
 
 .block1__leftside {
@@ -118,7 +117,8 @@
    width: 1.81rem;
    height: .94rem;
    position: absolute;
-   bottom: 2.5rem;
+   // bottom: 2.5rem;
+   top: 90%;
    left: 50%;
    transform: translateX(-50%);
 }
