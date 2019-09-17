@@ -322,14 +322,7 @@ overlay.addEventListener('click', e => {
 
 
 // dots
-
-
-
-
-
 //create dots
-
-
 
 // $(function(){
 //    var generateDots = function () {
@@ -351,23 +344,20 @@ overlay.addEventListener('click', e => {
 //    $('.fixed-menu__item').eq(0).addClass('fixed-menu__item--active');
 // })
 
-
-
 //navigation dots
 
+// $(window).on('load', function() {
+//    $('.fixed-menu__item').on('click', function() {
 
-$(window).on('load', function() {
-   $('.fixed-menu__item').on('click', function() {
+//       $(this).addClass('fixed-menu__item--active');
+//       $(this).siblings().removeClass('fixed-menu__item--active');
 
-      $(this).addClass('fixed-menu__item--active');
-      $(this).siblings().removeClass('fixed-menu__item--active');
-
-      $('html, body').animate({
-         'scrollTop': $('.section').height() * $(this).index()
-      }, 1000, function() {
-      })
-   });
-})
+//       $('html, body').animate({
+//          'scrollTop': $('.section').height() * $(this).index()
+//       }, 1000, function() {
+//       })
+//    });
+// })
 
 //anchor
 
@@ -390,7 +380,14 @@ $(window).on('load', function() {
 
 const sections = $('.section');
 const display = $('.maincontent');
+const fixed = $('.fixed-menu__item');
 let inscroll = false;
+
+const md = new MobileDetect(window.navigator.userAgent);
+const isMobile = md.mobile();
+
+
+
 
 const performTransition = sectionEq => {
 
@@ -404,6 +401,12 @@ const performTransition = sectionEq => {
          .addClass('section__active')
          .siblings()
          .removeClass('section__active');
+      fixed
+         .eq(sectionEq)
+         .addClass("fixed-menu__item--active")
+         .siblings()
+         .removeClass("fixed-menu__item--active");
+
 
       display.css({
          transform: `translateY(${position})`
@@ -451,8 +454,6 @@ $(document).on('wheel', e => {
    setTimeout(() => {
       inscroll = false;
    }, 1300);
-
-
 }) 
 
 
@@ -483,15 +484,6 @@ $(document).on('keydown', e => {
 });
 
 
-
-
-$('.wrapper').on('touchmove', e => e.preventDefault())
-
-
-
-
-
-
 $('[data-scroll-to]').on('click', e => {
    e.preventDefault();
 
@@ -500,14 +492,21 @@ $('[data-scroll-to]').on('click', e => {
    performTransition(target);
 })
 
+if (isMobile) {
 
-$(window).swipe({
-   swipe:function(event, direction){
-      let scrollDirection;
+   window.addEventListener('touchmove', e => {
+      e.preventDefault();
+   }, {passive: false})
 
-      if(direction === 'up') scrollDirection = 'next'
-      if (direction === 'down') scrollDirection = 'prev'
+   $('body').swipe({
+      swipe: function (event, direction) {
+         let scrollDirection;
+
+         if (direction === 'up') scrollDirection = 'next'
+         if (direction === 'down') scrollDirection = 'prev'
 
          scrollViewport(scrollDirection);
-   }
-})
+      }
+   })
+}
+
