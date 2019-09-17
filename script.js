@@ -324,6 +324,13 @@ overlay.addEventListener('click', e => {
 // dots
 
 
+
+
+
+//create dots
+
+
+
 $(function(){
    var generateDots = function () {
 
@@ -334,46 +341,38 @@ $(function(){
             },
             html : '<button type="button" class="fixed-menu__dot"></button>'
          });
-
          $('.fixed-menu').append(dot);
       })
    }
 
    generateDots();
+
+   $('.fixed-menu__item').eq(0).addClass('fixed-menu__item--active');
 })
 
 
-//perekluchenie po dots
+
+//navigation dots
 
 
-$('.fixed-menu__item').on('click', e => {
+$(window).on('load', function() {
+   $('.fixed-menu__item').on('click', function() {
 
-   e.preventDefault();
+      $(this).addClass('fixed-menu__item--active');
+      $(this).siblings().removeClass('fixed-menu__item--active');
+
+      $('html, body').animate({
+         'scrollTop': $('.section').height() * $(this).index()
+      }, 1000, function() {
+
+         // let activeSection = $('.section').filter('.section--active');
 
 
-   $('.fixed-menu__item').addClass('fixed-menu__item--active');
-
-
-   $('html, body').animate({
-      'scrollTop': $(window).scrollTop() + $(window).height()
-   }, 1000)
-
+      })
+   });
 })
 
-
-//button arrowScroll
-
-
-$('.fixed-menu').on('click', e => {
-   $('html, body').animate({
-      'scrollTop': $(window).scrollTop() + $(window).height()
-   }, 1000)
-});
-
-
-
-
-
+//anchor
 
 $('.arrow-scroll__btn').on('click', e => {
    $('html, body').animate({
@@ -388,6 +387,34 @@ $('.nav__section-button').on('click', e => {
 });
 
 
+
+// scroll dots
+
+
+// $(window).on('wheel', e => {
+
+//    let section = $('.section');
+//    let sectionPosition = section.offset().top; //на какой скроле находится секция
+//    let indexDots = $('.fixed-menu__item').index(); // индекс точки
+//    let howScroll = $(window).scrollTop(); //сколько пролистали
+
+
+//    // if (sectionPosition - howScroll === 0) {
+//          // $('.fixed-menu').eq(sectionPosition.index()).addClass('fixed-menu__item--active');
+//    // }
+
+//    let neighbour = section.next();
+
+
+//    if (howScroll === neighbour.offset().top){
+//       console.log('долистали до след');
+//       $('.fixed-menu__item--active').removeClass('fixed-menu__item--active').next('.fixed-menu__item').addClass('fixed-menu__item--active');
+
+//    }
+// })
+
+
+
 //one scrole section
 
 
@@ -397,39 +424,96 @@ $('.nav__section-button').on('click', e => {
 //    }, 600)
 // })
 
-$(function(){
-   $('.fixed-menu').on('click', function(e) {
-
-      e.preventDefault();
-
-      let $this = $(this);
-      let container = $this.closest('body');
-      let items = container.find('.section');
-      let activeSection = items.filter('.fixed-menu__item--active');
-      let reqItem = activeSection.next();
-      let reqIndex = reqItem.index();
-      let window = $('html, body');
-      let duration = 1000;
 
 
-      if (reqItem.length) {
-         window.animate({
-            'scrollTop': ''
-         }, duration, function() {
-               activeSection.removeClass('fixed-menu__item--active');
-               reqItem.addClass('fixed-menu__item--active');
-         })
-      }
-   })
+//one page scroll
 
 
+const sections = $('.section');
+const display = $('.maincontent');
+let inscroll = false;
 
+const performTransition = sectionEq => {
 
-   const moveSection = function (container, slideNum) {
+   if (inscroll === false) {
+      inscroll = true;
 
-      let items = container.find('.section');
-      let  
+      const position = `${sectionEq * -100}%`;
+
+      sections
+         .eq(sectionEq)
+         .addClass('section__active')
+         .siblings()
+         .removeClass('section__active');
+
+      display.css({
+         transform: `translateY(${position})`
+      })
+
+      setTimeout(() => {
+         inscroll = false;
+      }, 1000);
    }
-})
+}   
+
+const scrollViewport = direction => {
+
+   const activeSection = sections.filter('.section__active');
+   const nextSection = activeSection.next();
+   const prevSection = activeSection.prev();
+
+   if (direction === 'next' && nextSection.length) {
+
+      performTransition(nextSection.index());
+   }
+
+   if (direction === 'prev' && prevSection.length) {
+
+      performTransition(prevSection.index());
+   }
+}
 
 
+$(document).on('wheel', e => {
+
+   const deltaY = e.originalEvent.deltaY;
+
+   if (deltaY > 0) {
+      scrollViewport('next');
+   }
+
+   if (deltaY < 0) {
+      scrollViewport('prev');
+   }
+}) 
+
+
+
+//input textarea
+
+$(document).on('keydown', e => {
+
+   // const tagName = e.target.tagName.toLowerCase();
+   // const userTypingInInput = tagName === "input" || tagName === "textarea";
+
+   // if (userTypingInInput) return;
+
+   // switch (e.key) {
+   //    case 38:
+   //       break;
+   //    case 40:
+   //       scrollViewport("next");
+   //       break;
+   // }
+   console.log(e.key);
+
+
+   if (e.key == 'ArrowUp') {
+      scrollViewport("prev");
+   }
+   if (e.key == 'ArrowDown') {
+      scrollViewport("next");
+   }
+
+
+});

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,11 +7,10 @@
    <link rel="stylesheet" href="css/layout/main.css">
    <title>MrBurger</title>
 </head>
-
 <body>
    <div class="wrapper">
-      <!-- начало приветственой страницы -->
-      <section class="section section--block">
+      <div class="maincontent">
+      <section class="section section__active section--block">
          <div class="container">
             <header class="header">
                <img class="logo" src="./img/logo.png" alt="логотип MrBurger">
@@ -65,48 +63,46 @@
                </svg>
             </button>
          </div>
+               <div class="section-hover hover-menu" id="hover-menu">
+                  <div class="container">
+                     <header class="hover-menu__header">
+                        <img class="logo" src="./img/logo.png" alt="логотип MrBurger">
+                        <a class="cross" id="cross">
+                           <ul class="cross__list">
+                              <li class="cross__list-one"></li>
+                              <li class="cross__list-two"></li>
+                           </ul>
+                        </a>
+                     </header>
+                     <div class="hover-menu__content">
+                        <ul class="hover-content__list">
+                           <li class="content__list-item">
+                              <a href="" class="item__link">о нас</a>
+                           </li>
+                           <li class="content__list-item">
+                              <a href="" class="item__link">бургеры</a>
+                           </li>
+                           <li class="content__list-item">
+                              <a href="" class="item__link">команда</a>
+                           </li>
+                           <li class="content__list-item">
+                              <a href="" class="item__link">меню</a>
+                           </li>
+                           <li class="content__list-item">
+                              <a href="" class="item__link">отзывы</a>
+                           </li>
+                           <li class="content__list-item">
+                              <a href="" class="item__link">как мы работаем</a>
+                           </li>
+                           <li class="content__list-item">
+                              <a href="" class="item__link">контакты</a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
       </section>
-      <section class="section-hover hover-menu" id="hover-menu">
-         <div class="container">
-            <header class="hover-menu__header">
-               <img class="logo" src="./img/logo.png" alt="логотип MrBurger">
-               <a class="cross" id="cross">
-                  <ul class="cross__list">
-                     <li class="cross__list-one"></li>
-                     <li class="cross__list-two"></li>
-                  </ul>
-               </a>
-            </header>
-            <div class="hover-menu__content">
-               <ul class="hover-content__list">
-                  <li class="content__list-item">
-                     <a href="" class="item__link">о нас</a>
-                  </li>
-                  <li class="content__list-item">
-                     <a href="" class="item__link">бургеры</a>
-                  </li>
-                  <li class="content__list-item">
-                     <a href="" class="item__link">команда</a>
-                  </li>
-                  <li class="content__list-item">
-                     <a href="" class="item__link">меню</a>
-                  </li>
-                  <li class="content__list-item">
-                     <a href="" class="item__link">отзывы</a>
-                  </li>
-                  <li class="content__list-item">
-                     <a href="" class="item__link">как мы работаем</a>
-                  </li>
-                  <li class="content__list-item">
-                     <a href="" class="item__link">контакты</a>
-                  </li>
-               </ul>
-            </div>
-         </div>
-      </section>
-      <!-- окончание приветственой страницы -->
-      <!-- начало страницы мы лучшие -->
-      <section  class="section section--block-two">
+      <section class="section section--block-two">
          <div class="container container__block-two">
             <div class="block-two__title">мы лучшие</div>
             <ul class="content__list">
@@ -143,62 +139,64 @@
             </ul>
          </div>
       </section>
-      <!-- окончание страницы мы лучшие -->
-      <!-- начало секции бургеры-->
       <section class="section burgers">
          <div class="container">
             <div class="burgers__menu">
-                  <div class="arrowLeft">
-                     <a href="" class="arrow-left" id="left"></a>
-                  </div>
-                  <div class="slider__block">
-                     <ul class="slider-block__active" id="slider">
-                        <li class="slide-elem">
-                           <div class="slide-elem__leftside">
-                                 <img class="leftside__img" src="./img/steam_hello.png" alt="">
+               <div class="arrowLeft">
+                  <a href="" class="arrow-left" id="left"></a>
+               </div>
+               <div class="slider__block">
+                  <ul class="slider-block__active" id="slider">
+                     <li class="slide-elem">
+                        <div class="slide-elem__leftside">
+                           <img class="leftside__img" src="./img/steam_hello.png" alt="">
+                        </div>
+                        <div class="slide-elem__rightside">
+                           <h1 class="rightside__title">dark beef burger</h1>
+                           <div class="rightside__text">Ваш старый добрый знакомый, с рубленым бифщтексом из 100% говядины,
+                              тремя кусочками нежнейшего сыра эмменталь, двумя помидорами и т.д. Короче вкуснее, чем в Маке!
                            </div>
-                           <div class="slide-elem__rightside">
-                              <h1 class="rightside__title">dark beef burger</h1>
-                              <div class="rightside__text">Ваш старый добрый знакомый, с рубленым бифщтексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами и т.д. Короче вкуснее, чем в Маке! </div>
-                              <div class="rightside__price"> 500 <p>рублей</p>
-                                 <button class="rightside__price-button"></button>
-                              </div>
+                           <div class="rightside__price"> 500 <p>рублей</p>
+                              <button class="rightside__price-button"></button>
                            </div>
-                        </li>
-                        <li class="slide-elem">
-                           <div class="slide-elem__leftside">
-                              <img class="leftside__img" src="./img/steam_hello.png" alt="">
+                        </div>
+                     </li>
+                     <li class="slide-elem">
+                        <div class="slide-elem__leftside">
+                           <img class="leftside__img" src="./img/steam_hello.png" alt="">
+                        </div>
+                        <div class="slide-elem__rightside">
+                           <h1 class="rightside__title">dark beef burger</h1>
+                           <div class="rightside__text">Ваш старый добрый знакомый, с рубленым бифщтексом из 100% говядины,
+                              тремя кусочками нежнейшего сыра эмменталь, двумя помидорами и т.д. Короче вкуснее, чем в Маке!
                            </div>
-                           <div class="slide-elem__rightside">
-                              <h1 class="rightside__title">dark beef burger</h1>
-                              <div class="rightside__text">Ваш старый добрый знакомый, с рубленым бифщтексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами и т.д. Короче вкуснее, чем в Маке! </div>
-                              <div class="rightside__price"> 1000 <p>рублей</p>
-                                 <button class="rightside__price-button"></button>
-                              </div>
+                           <div class="rightside__price"> 1000 <p>рублей</p>
+                              <button class="rightside__price-button"></button>
                            </div>
-                        </li>
-                        <li class="slide-elem">
-                           <div class="slide-elem__leftside">
-                              <img class="leftside__img" src="./img/steam_hello.png" alt="">
+                        </div>
+                     </li>
+                     <li class="slide-elem">
+                        <div class="slide-elem__leftside">
+                           <img class="leftside__img" src="./img/steam_hello.png" alt="">
+                        </div>
+                        <div class="slide-elem__rightside">
+                           <h1 class="rightside__title">dark beef burger</h1>
+                           <div class="rightside__text">Ваш старый добрый знакомый, с рубленым бифщтексом из 100% говядины,
+                              тремя кусочками нежнейшего сыра эмменталь, двумя помидорами и т.д. Короче вкуснее, чем в Маке!
                            </div>
-                           <div class="slide-elem__rightside">
-                              <h1 class="rightside__title">dark beef burger</h1>
-                              <div class="rightside__text">Ваш старый добрый знакомый, с рубленым бифщтексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами и т.д. Короче вкуснее, чем в Маке! </div>
-                              <div class="rightside__price"> 1500 <p>рублей</p>
-                                 <button class="rightside__price-button"></button>
-                              </div>
+                           <div class="rightside__price"> 1500 <p>рублей</p>
+                              <button class="rightside__price-button"></button>
                            </div>
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="arrowRight">
-                     <a href="" class="arrow-right" id="right"></a>
-                  </div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+               <div class="arrowRight">
+                  <a href="" class="arrow-right" id="right"></a>
+               </div>
             </div>
          </div>
       </section>
-      <!-- окончание секции бургеры -->
-      <!-- начало секции команда -->
       <section class="section team">
          <div class="team__block-right">
             <div class="team__block-in">
@@ -268,8 +266,6 @@
             </div>
          </div>
       </section>
-      <!-- окончание секции команда -->
-      <!-- начало секции меню -->
       <section class="section menu">
          <div class="menu__title">
             меню
@@ -316,8 +312,6 @@
             </li>
          </ul>
       </section>
-      <!-- окончание секции меню -->
-      <!-- начало страницы отзывы -->
       <section class="section section--reviews">
          <ul class="reviews">
             <li class="reviews__block" style="background-image: url(./img/avtor_1.png)">
@@ -402,7 +396,6 @@
                </div>
             </li>
          </ul>
-
          <div class="overlay">
             <div class="popup">
                <div class="popup__text"></div>
@@ -410,15 +403,11 @@
             </div>
          </div>
       </section>
-      <!-- окончание страницы отзывы -->
-      <!-- начало секции как мы работаем -->
       <section class="section work">
          <div class="container container__work">
             <div class="title__work">как мы работаем</div>
          </div>
       </section>
-      <!-- окончание секции как мы работаем -->
-      <!-- начало секции форма -->
       <section class="section form">
          <div class="container container__form">
             <div class="title__form">закажите доставку</div>
@@ -446,7 +435,7 @@
                      </div>
                      <div class="form__row">
                         <label class="form__block">
-                           <div class="form__block-title" >Дом*</div>
+                           <div class="form__block-title">Дом*</div>
                            <input type="number" name="house" class="form__input" required>
                            <div class="error"></div>
                         </label>
@@ -455,11 +444,11 @@
                            <input type="text" name="corps" class="form__input">
                         </label>
                         <label class="form__block">
-                           <div class="form__block-title" >Квартира</div>
+                           <div class="form__block-title">Квартира</div>
                            <input type="number" name="apartment" class="form__input">
                         </label>
                         <label class="form__block">
-                           <div class="form__block-title" >Этаж</div>
+                           <div class="form__block-title">Этаж</div>
                            <input type="number" name="floor" class="form__input">
                         </label>
                      </div>
@@ -502,8 +491,6 @@
             </div>
          </div>
       </section>
-      <!-- окончание секции форма -->
-      <!-- начало секции контакты -->
       <section class="section contacts">
          <div class="container container__contacts">
             <footer class="footer">
@@ -542,41 +529,11 @@
             </footer>
          </div>
       </section>
-      <!-- окончание секции контакты -->
-      <!-- начало fixed menu -->
-      <ul class="fixed-menu">
-         <!-- <li class="fixed-menu__item fixed-menu__item--active">
-            <button type="button" class="fixed-menu__dot"></button>
-         </li>
-         <li class="fixed-menu__item ">
-            <button type="button" class="fixed-menu__dot"></button>
-         </li>
-         <li class="fixed-menu__item ">
-            <button type="button" class="fixed-menu__dot"></button>
-         </li>
-         <li class="fixed-menu__item ">
-            <button type="button" class="fixed-menu__dot"></button>
-         </li>
-         <li class="fixed-menu__item ">
-            <button type="button" class="fixed-menu__dot"></button>
-         </li>
-         <li class="fixed-menu__item ">
-            <button type="button" class="fixed-menu__dot"></button>
-         </li>
-         <li class="fixed-menu__item ">
-            <button type="button" class="fixed-menu__dot"></button>
-         </li>
-         <li class="fixed-menu__item ">
-            <button type="button" class="fixed-menu__dot"></button>
-         </li>
-         <li class="fixed-menu__item ">
-            <button type="button" class="fixed-menu__dot"></button>
-         </li> -->
-      </ul>
-      <!-- окончание fixed menu -->
-      <div class="form__row-block"></div>
-   </div>
 
+      </div>
+            <ul class="fixed-menu"></ul>
+            <div class="form__row-block"></div>
+   </div>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
    <script src="./script.js"></script>
 </body>
