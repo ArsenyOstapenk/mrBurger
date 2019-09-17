@@ -17,28 +17,28 @@
                <nav class="nav">
                   <ul class="nav__list">
                      <li class="nav__item">
-                        <a href="#" class="nav__link">о нас</a>
+                        <a href="#" class="nav__link" data-scroll-to="1">о нас</a>
                      </li>
                      <li class="nav__item">
-                        <a href="#" class="nav__link">бургеры</a>
+                        <a href="#" class="nav__link" data-scroll-to="2">бургеры</a>
                      </li>
                      <li class="nav__item">
-                        <a href="#" class="nav__link">команда</a>
+                        <a href="#" class="nav__link" data-scroll-to="3">команда</a>
                      </li>
                      <li class="nav__item">
-                        <a href="#" class="nav__link">меню</a>
+                        <a href="#" class="nav__link" data-scroll-to="4">меню</a>
                      </li>
                      <li class="nav__item">
-                        <a href="#" class="nav__link">отзывы</a>
+                        <a href="#" class="nav__link" data-scroll-to="5">отзывы</a>
                      </li>
                      <li class="nav__item">
-                        <a href="#" class="nav__link">как мы работаем</a>
+                        <a href="#" class="nav__link" data-scroll-to="6">как мы работаем</a>
                      </li>
                      <li class="nav__item">
-                        <a href="#" class="nav__link">контакты</a>
+                        <a href="#" class="nav__link" data-scroll-to="8">контакты</a>
                      </li>
                   </ul>
-                  <button type="button" class="nav__section-button">заказать</button>
+                  <button type="button" class="nav__section-button" data-scroll-to="7">заказать</button>
                   <a href="" class="hamburger-menu">
                      <ul class="hamburger-menu__list" id="hmenu">
                         <li class="hamburger-menu__list-item"></li>
@@ -77,25 +77,25 @@
                      <div class="hover-menu__content">
                         <ul class="hover-content__list">
                            <li class="content__list-item">
-                              <a href="" class="item__link">о нас</a>
+                              <a href="" class="item__link" data-scroll-to="1">о нас</a>
                            </li>
                            <li class="content__list-item">
-                              <a href="" class="item__link">бургеры</a>
+                              <a href="" class="item__link" data-scroll-to="2">бургеры</a>
                            </li>
                            <li class="content__list-item">
-                              <a href="" class="item__link">команда</a>
+                              <a href="" class="item__link" data-scroll-to="3">команда</a>
                            </li>
                            <li class="content__list-item">
-                              <a href="" class="item__link">меню</a>
+                              <a href="" class="item__link" data-scroll-to="4">меню</a>
                            </li>
                            <li class="content__list-item">
-                              <a href="" class="item__link">отзывы</a>
+                              <a href="" class="item__link" data-scroll-to="5">отзывы</a>
                            </li>
                            <li class="content__list-item">
-                              <a href="" class="item__link">как мы работаем</a>
+                              <a href="" class="item__link" data-scroll-to="6">как мы работаем</a>
                            </li>
                            <li class="content__list-item">
-                              <a href="" class="item__link">контакты</a>
+                              <a href="" class="item__link" data-scroll-to="8">контакты</a>
                            </li>
                         </ul>
                      </div>
@@ -531,10 +531,39 @@
       </section>
 
       </div>
-            <ul class="fixed-menu"></ul>
+            <ul class="fixed-menu">
+               <li class="fixed-menu__item fixed-menu__item--active" data-scroll-to="0">
+                  <button type="button" class="fixed-menu__dot"></button>
+               </li>
+               <li class="fixed-menu__item" data-scroll-to="1">
+                  <button type="button" class="fixed-menu__dot"></button>
+               </li>
+               <li class="fixed-menu__item" data-scroll-to="2">
+                  <button type="button" class="fixed-menu__dot"></button>
+               </li>
+               <li class="fixed-menu__item" data-scroll-to="3">
+                  <button type="button" class="fixed-menu__dot"></button>
+               </li>
+               <li class="fixed-menu__item" data-scroll-to="4">
+                  <button type="button" class="fixed-menu__dot"></button>
+               </li>
+               <li class="fixed-menu__item" data-scroll-to="5">
+                  <button type="button" class="fixed-menu__dot"></button>
+               </li>
+               <li class="fixed-menu__item" data-scroll-to="6">
+                  <button type="button" class="fixed-menu__dot"></button>
+               </li>
+               <li class="fixed-menu__item" data-scroll-to="7">
+                  <button type="button" class="fixed-menu__dot"></button>
+               </li>
+               <li class="fixed-menu__item" data-scroll-to="8">
+                  <button type="button" class="fixed-menu__dot"></button>
+               </li>
+            </ul>
             <div class="form__row-block"></div>
    </div>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
    <script src="./script.js"></script>
 </body>
 

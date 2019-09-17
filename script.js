@@ -331,24 +331,25 @@ overlay.addEventListener('click', e => {
 
 
 
-$(function(){
-   var generateDots = function () {
+// $(function(){
+//    var generateDots = function () {
 
-      $('.section').each(function () {
-         let dot = $('<li>', {
-            attr : {
-               class: 'fixed-menu__item'
-            },
-            html : '<button type="button" class="fixed-menu__dot"></button>'
-         });
-         $('.fixed-menu').append(dot);
-      })
-   }
+//       $('.section').each(function () {
+//          let dot = $('<li>', {
+//             attr : {
+//                class : 'fixed-menu__item',
+//             },
+//             html : '<button type="button" class="fixed-menu__dot"></button>'
+//          });
+//          $('.fixed-menu').append(dot);
+         
+//       })
+//    }
 
-   generateDots();
+//    generateDots();
 
-   $('.fixed-menu__item').eq(0).addClass('fixed-menu__item--active');
-})
+//    $('.fixed-menu__item').eq(0).addClass('fixed-menu__item--active');
+// })
 
 
 
@@ -364,65 +365,23 @@ $(window).on('load', function() {
       $('html, body').animate({
          'scrollTop': $('.section').height() * $(this).index()
       }, 1000, function() {
-
-         // let activeSection = $('.section').filter('.section--active');
-
-
       })
    });
 })
 
 //anchor
 
-$('.arrow-scroll__btn').on('click', e => {
-   $('html, body').animate({
-      'scrollTop': $(".section--block-two").offset().top
-   }, 1000)
-});
-
-$('.nav__section-button').on('click', e => {
-   $('html, body').animate({
-      'scrollTop': $(".form").offset().top
-   }, 1000)
-});
-
-
-
-// scroll dots
-
-
-// $(window).on('wheel', e => {
-
-//    let section = $('.section');
-//    let sectionPosition = section.offset().top; //на какой скроле находится секция
-//    let indexDots = $('.fixed-menu__item').index(); // индекс точки
-//    let howScroll = $(window).scrollTop(); //сколько пролистали
-
-
-//    // if (sectionPosition - howScroll === 0) {
-//          // $('.fixed-menu').eq(sectionPosition.index()).addClass('fixed-menu__item--active');
-//    // }
-
-//    let neighbour = section.next();
-
-
-//    if (howScroll === neighbour.offset().top){
-//       console.log('долистали до след');
-//       $('.fixed-menu__item--active').removeClass('fixed-menu__item--active').next('.fixed-menu__item').addClass('fixed-menu__item--active');
-
-//    }
-// })
-
-
-
-//one scrole section
-
-
-// $('.wrapper').on('wheel', e => {
+// $('.arrow-scroll__btn').on('click', e => {
 //    $('html, body').animate({
-//       'scrollTop': $(window).scrollTop() + $(window).height()
-//    }, 600)
-// })
+//       'scrollTop': $(".section--block-two").offset().top
+//    }, 1000)
+// });
+
+// $('.nav__section-button').on('click', e => {
+//    $('html, body').animate({
+//       'scrollTop': $(".form").offset().top
+//    }, 1000)
+// });
 
 
 
@@ -452,7 +411,7 @@ const performTransition = sectionEq => {
 
       setTimeout(() => {
          inscroll = false;
-      }, 1000);
+      }, 1300);
    }
 }   
 
@@ -477,14 +436,23 @@ const scrollViewport = direction => {
 $(document).on('wheel', e => {
 
    const deltaY = e.originalEvent.deltaY;
+   if (inscroll === false) {
+      if (deltaY > 0) {
+         scrollViewport('next');
+         $('.fixed-menu__item--active').next().addClass('fixed-menu__item--active').siblings().removeClass('fixed-menu__item--active');
+      }
 
-   if (deltaY > 0) {
-      scrollViewport('next');
-   }
+      if (deltaY < 0) {
+         scrollViewport('prev');
+         $('.fixed-menu__item--active').prev().addClass('fixed-menu__item--active').siblings().removeClass('fixed-menu__item--active');
 
-   if (deltaY < 0) {
-      scrollViewport('prev');
+      }
    }
+   setTimeout(() => {
+      inscroll = false;
+   }, 1300);
+
+
 }) 
 
 
@@ -493,27 +461,46 @@ $(document).on('wheel', e => {
 
 $(document).on('keydown', e => {
 
-   // const tagName = e.target.tagName.toLowerCase();
-   // const userTypingInInput = tagName === "input" || tagName === "textarea";
+   const tagName = e.target.tagName.toLowerCase();
+   const userTypingInInput = tagName === "input" || tagName === "textarea";
 
-   // if (userTypingInInput) return;
+   if (userTypingInInput) return;
 
-   // switch (e.key) {
-   //    case 38:
-   //       break;
-   //    case 40:
-   //       scrollViewport("next");
-   //       break;
-   // }
-   console.log(e.key);
-
-
-   if (e.key == 'ArrowUp') {
-      scrollViewport("prev");
-   }
-   if (e.key == 'ArrowDown') {
-      scrollViewport("next");
+   if (inscroll === false) {
+      if (e.key == 'ArrowUp') {
+         scrollViewport("prev");
+         $('.fixed-menu__item--active').prev().addClass('fixed-menu__item--active').siblings().removeClass('fixed-menu__item--active');
+      }
+      if (e.key == 'ArrowDown') {
+         scrollViewport("next");
+         $('.fixed-menu__item--active').next().addClass('fixed-menu__item--active').siblings().removeClass('fixed-menu__item--active');
+      }
    }
 
-
+   setTimeout(() => {
+      inscroll = false;
+   }, 1300);
 });
+
+$('.wrapper').on('touchmove', e => e.preventDefault())
+
+
+$('[data-scroll-to]').on('click', e => {
+   e.preventDefault();
+
+   const target = $(e.currentTarget).attr('data-scroll-to');
+
+   performTransition(target);
+})
+
+
+$(window).swipe({
+   swipe:function(event, direction){
+      let scrollDirection;
+
+      if(direction === 'up') scrollDirection = 'next'
+      if (direction === 'down') scrollDirection = 'prev'
+
+         scrollViewport(scrollDirection);
+   }
+})
