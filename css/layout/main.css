@@ -14,10 +14,12 @@ body {
   height: 100%;
   margin: 0;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  -ms-touch-action: none;
+  touch-action: none; }
 
 .section {
-  height: 100vh; }
+  height: 100%; }
   @media screen and (max-width: 480px) {
     .section {
       height: 100%; } }
