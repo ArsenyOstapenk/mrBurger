@@ -1571,6 +1571,9 @@ progress::-webkit-progress-value {
   background-color: #575757;
   border-radius: 0.3125rem; }
 
+video {
+  cursor: pointer; }
+
 .form {
   background: url(../../img/bg_form.png) center center no-repeat;
   background-size: cover;

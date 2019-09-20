@@ -111,7 +111,6 @@ progress::-webkit-progress-bar {
     margin: auto;
 }
 
-
 progress {
     height: rem(10px);
     background-color: transparent;
@@ -123,4 +122,8 @@ progress::-webkit-progress-value {
     cursor: pointer;
     background-color: #575757;
     border-radius: rem(5px);
+}
+
+video {
+    cursor: pointer;
 }

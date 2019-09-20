@@ -132,6 +132,7 @@ const allTime = document.querySelector('#allTime');
 
 video.ontimeupdate = progressUpdate;
 
+
 videoBtn.addEventListener('click', e => {
    if (video.paused) {
       video.play();
@@ -194,13 +195,6 @@ progress.addEventListener('mousedown', function () {
          this.value = (100 * targetClick) / widthProgress;
       })
 
-   this.addEventListener('mousemove', function () {
-      event.stopPropagation();
-   })
-
-      window.addEventListener('mouseup', function () {
-         video.play();
-      })
 })
 
 progress.addEventListener('mouseup', function () {
@@ -228,11 +222,10 @@ function progressUpdate() {
       progressTime.textContent = '00:0' + Math.floor(c);
    }
    // allTime.textContent = '00:' + Math.floor(d);
+   if (progress.value == 100) {
+      progress.value = 0;
+      videoBtn.classList.remove('play-button--pause');
+      videoBtn.classList.add('play-button');
+      video.pause();
+   }
 }
-
-
-
-
-
-
-
