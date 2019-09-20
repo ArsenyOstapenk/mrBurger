@@ -442,13 +442,10 @@ $(document).on('wheel', e => {
    if (inscroll === false) {
       if (deltaY > 0) {
          scrollViewport('next');
-         $('.fixed-menu__item--active').next().addClass('fixed-menu__item--active').siblings().removeClass('fixed-menu__item--active');
       }
 
       if (deltaY < 0) {
          scrollViewport('prev');
-         $('.fixed-menu__item--active').prev().addClass('fixed-menu__item--active').siblings().removeClass('fixed-menu__item--active');
-
       }
    }
    setTimeout(() => {
@@ -474,7 +471,7 @@ $(document).on('keydown', e => {
       }
       if (e.key == 'ArrowDown') {
          scrollViewport("next");
-         $('.fixed-menu__item--active').next().addClass('fixed-menu__item--active').siblings().removeClass('fixed-menu__item--active');
+         $('.fixed-menu__item--active').removeClass('fixed-menu__item--active').next().addClass('fixed-menu__item--active');
       }
    }
 

@@ -32,6 +32,7 @@
     display: block;
     height: 100%;
     position: relative;
+    background: rgba(#2f3234, .8);
 
     @include phone {
         width: 2rem;
@@ -81,6 +82,7 @@
     height: 100%;
     width: 100%;
     position: relative;
+    filter: brightness(40%);
 }
 
 .menu__block {

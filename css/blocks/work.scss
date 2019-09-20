@@ -2,5 +2,137 @@
     background: url(../../img/bg_work.png) center center no-repeat;
     background-size: cover;
     position: relative;
-    // height: 100vh;
- }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#playBtn {
+    cursor: pointer;
+}
+
+.title__work {
+    font-family: gagalin-regular;
+    font-size: 4.5rem;
+    color: #333;
+    position: absolute;
+    top: 0;
+
+    @include phone {
+        font-size: 2.5rem;
+        top: 10%;
+    }
+}
+
+.player__wrapper {
+    width: 100%;
+    font-size: 0;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+}
+
+.player__start {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #575757;
+    font-family: ubuntu-regular;
+}
+
+.player__controls {
+    width: 100%;
+    height: 120%;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.2rem;
+}
+
+.player__duration {
+    color: #575757;
+    font-size: .8rem;
+}
+
+.player__playback {
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+progress::-webkit-progress-bar {
+    border-radius: rem(5px);
+}
+
+
+progress {
+    background-color: #575757;
+    width: 90%;
+}
+
+progress::-webkit-progress-value {
+    background-color: #222;
+}
+
+
+
+
+// .playback__way {
+//     width: 100%;
+// }
+
+// input[type=range] {
+//     -webkit-appearance: none;
+//     /* Скрывает слайдер, чтобы можно было создать свой */
+//     width: 100%;
+//     /* Указание параметра ширины требуется для Firefox. */
+// }
+
+// input[type=range]::-webkit-slider-thumb {
+//     -webkit-appearance: none;
+// }
+
+// input[type=range]:focus {
+//     outline: none;
+//     /* Убирает голубую границу у элемента. Хотя, возможно, и стоит создавать некоторое оформления для состояния фокуса в целях обеспечения доступности. */
+// }
+
+// input[type=range]::-ms-track {
+//     width: 100%;
+//     cursor: pointer;
+//     background: transparent;
+//     /* Скрывает слайдер, чтобы можно было добавить собственные стили. */
+//     border-color: transparent;
+//     color: transparent;
+// }
+
+// input[type=range]::-webkit-slider-thumb {
+//     -webkit-appearance: none;
+//     height: rem(10px);
+//     width: rem(10px);
+//     border-radius: 50%;
+//     background: #575757;
+//     cursor: pointer;
+//     margin-top: -.6%;
+// }
+
+
+// input[type=range]::-webkit-slider-runnable-track {
+//     width: 100%;
+//     height: rem(3px);
+//     cursor: pointer;
+//     background: #575757;
+//     border-radius: 3%;
+// }
+
+// input[type=range]:focus::-webkit-slider-runnable-track {
+//     background: #575757;
+// }

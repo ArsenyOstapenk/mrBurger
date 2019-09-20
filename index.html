@@ -267,9 +267,7 @@
          </div>
       </section>
       <section class="section menu">
-         <div class="menu__title">
-            меню
-         </div>
+         <div class="menu__title">меню</div>
          <ul class="menu__list">
             <li class="menu__block">
                <a href="#" class="menu__trigger">
@@ -396,11 +394,35 @@
                </div>
             </li>
          </ul>
-
       </section>
       <section class="section work">
-         <div class="container container__work">
+         <div class="container">
             <div class="title__work">как мы работаем</div>
+
+            <div class="player">
+
+               <div class="player__wrapper">
+                  <video id="video" width="100%" height="85%">
+                     <source src="video/Hamburger - 1015.mp4" type="video/mp4" poster="">
+                  </video>
+               </div>
+
+               <div id="controls" class="player__controls">
+                  <div class="player__start">
+                     <a id="playBtn">погнали</a>
+                  </div>
+                  <div class="player__playback">
+                     <progress id="progress" max="100" value="0"></progress>
+                     <!-- <input class="playback__way" type="range" step="0.01" min="0" max="100" value="50" id="volume" /> -->
+                  </div>
+                  <div class="player__duration">
+                     <span id="progressTime">00:00</span>
+                     <span id="alltime">00:00</span>
+                  </div>
+               </div>
+
+            </div> 
+
          </div>
       </section>
       <section class="section form">
@@ -487,6 +509,8 @@
          </div>
       </section>
       <section class="section contacts">
+         <iframe src="https://www.google.com/maps/d/embed?mid=1RRnPyPEW9mAEqwCymBAJpY05dmxynzLY" width="100%"
+            height="100%"></iframe>
          <div class="container container__contacts">
             <footer class="footer">
                <address class="footer__contacts-tel">
@@ -566,5 +590,6 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.3.6/mobile-detect.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
    <script src="./script.js"></script>
+   <script src="./video.js"></script>
 </body>
 </html>
