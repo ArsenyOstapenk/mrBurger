@@ -133,7 +133,6 @@ const allTime = document.querySelector('#allTime');
 video.ontimeupdate = progressUpdate;
 
 videoBtn.addEventListener('click', e => {
-   
    if (video.paused) {
       video.play();
    }else{
@@ -141,15 +140,30 @@ videoBtn.addEventListener('click', e => {
       //video.currentTime = 0; //сбросить время
       //video.playbackRate = 2; //в два раза быстрее проигрывается
       //video.volume = this.value / 100; //регулировка громкости
+   } 
+
+   if (video.paused) {
+      videoBtn.classList.remove('play-button--pause');
+      videoBtn.classList.add('play-button');
+   } else {
+      videoBtn.classList.add('play-button--pause');
+      videoBtn.classList.remove('play-button');
    }
 })
 
 video.addEventListener('click', e => {
-
    if (video.paused) {
       video.play();
    } else {
       video.pause();
+   }
+
+   if (video.paused) {
+      videoBtn.classList.remove('play-button--pause');
+      videoBtn.classList.add('play-button');
+   } else {
+      videoBtn.classList.add('play-button--pause');
+      videoBtn.classList.remove('play-button');
    }
 })
 
@@ -181,6 +195,9 @@ progress.addEventListener('mousedown', function () {
 
          this.value = (100 * targetClick) / widthProgress;
       })
+      window.addEventListener('mouseup', function () {
+         video.play();
+      })
 })
 
 progress.addEventListener('mouseup', function () {
@@ -191,6 +208,10 @@ progress.addEventListener('mouseup', function () {
    this.value = (100 * targetClick) / widthProgress;
    video.currentTime = video.duration * (targetClick / widthProgress);
    video.play();
+
+   this.addEventListener('mousemove', function (event) {
+      event.stopPropagation();
+   })
 })
 
 

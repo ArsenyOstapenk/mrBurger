@@ -7,8 +7,43 @@
     justify-content: center;
 }
 
-#playBtn {
+.play-button {
+    display: block;
     cursor: pointer;
+    height: 0;
+    width: 0;
+    border: rem(12px) solid;
+    // border-width: rem(25px);
+    border-right-width: 0;
+    border-left-color: #575757;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.play-button--pause {
+    cursor: pointer;
+    height: rem(24px);
+    width: rem(24px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+
+    &:after {
+        content: '';
+        display: inline-block;
+        height: 80%;
+        width: 28%;
+        background-color: #575757;
+    }
+
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 80%;
+        width: 28%;
+        background-color: #575757;
+    }
 }
 
 .title__work {
@@ -44,6 +79,7 @@
     justify-content: center;
     color: #575757;
     font-family: ubuntu-regular;
+    margin: rem(3px) 0;
 }
 
 .player__controls {
@@ -69,70 +105,22 @@
 }
 
 progress::-webkit-progress-bar {
-    border-radius: rem(5px);
+    cursor: pointer;
+    border-radius: rem(10px);
+    height: rem(5px);
+    margin: auto;
 }
 
 
 progress {
-    background-color: #575757;
+    height: rem(10px);
+    background-color: transparent;
     width: 90%;
+    border-radius: rem(5px);
 }
 
 progress::-webkit-progress-value {
-    background-color: #222;
+    cursor: pointer;
+    background-color: #575757;
+    border-radius: rem(5px);
 }
-
-
-
-
-// .playback__way {
-//     width: 100%;
-// }
-
-// input[type=range] {
-//     -webkit-appearance: none;
-//     /* Скрывает слайдер, чтобы можно было создать свой */
-//     width: 100%;
-//     /* Указание параметра ширины требуется для Firefox. */
-// }
-
-// input[type=range]::-webkit-slider-thumb {
-//     -webkit-appearance: none;
-// }
-
-// input[type=range]:focus {
-//     outline: none;
-//     /* Убирает голубую границу у элемента. Хотя, возможно, и стоит создавать некоторое оформления для состояния фокуса в целях обеспечения доступности. */
-// }
-
-// input[type=range]::-ms-track {
-//     width: 100%;
-//     cursor: pointer;
-//     background: transparent;
-//     /* Скрывает слайдер, чтобы можно было добавить собственные стили. */
-//     border-color: transparent;
-//     color: transparent;
-// }
-
-// input[type=range]::-webkit-slider-thumb {
-//     -webkit-appearance: none;
-//     height: rem(10px);
-//     width: rem(10px);
-//     border-radius: 50%;
-//     background: #575757;
-//     cursor: pointer;
-//     margin-top: -.6%;
-// }
-
-
-// input[type=range]::-webkit-slider-runnable-track {
-//     width: 100%;
-//     height: rem(3px);
-//     cursor: pointer;
-//     background: #575757;
-//     border-radius: 3%;
-// }
-
-// input[type=range]:focus::-webkit-slider-runnable-track {
-//     background: #575757;
-// }
