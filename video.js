@@ -186,15 +186,18 @@ progress.addEventListener('mousedown', function () {
 
    this.value = (100 * targetClick) / widthProgress;
    video.pause();
-   video.currentTime = video.duration * (targetClick / widthProgress);
+   // video.currentTime = video.duration * (targetClick / widthProgress);
 
       this.addEventListener('mousemove', function () {
-
          let widthProgress = this.offsetWidth;
          let targetClick = event.offsetX;
-
          this.value = (100 * targetClick) / widthProgress;
       })
+
+   this.addEventListener('mousemove', function () {
+      event.stopPropagation();
+   })
+
       window.addEventListener('mouseup', function () {
          video.play();
       })
@@ -208,10 +211,8 @@ progress.addEventListener('mouseup', function () {
    this.value = (100 * targetClick) / widthProgress;
    video.currentTime = video.duration * (targetClick / widthProgress);
    video.play();
-
-   this.addEventListener('mousemove', function (event) {
-      event.stopPropagation();
-   })
+   videoBtn.classList.add('play-button--pause');
+   videoBtn.classList.remove('play-button');
 })
 
 
@@ -226,7 +227,6 @@ function progressUpdate() {
    if (video.currentTime < 10) {
       progressTime.textContent = '00:0' + Math.floor(c);
    }
-
    // allTime.textContent = '00:' + Math.floor(d);
 }
 
