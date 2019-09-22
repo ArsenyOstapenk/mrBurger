@@ -1546,6 +1546,9 @@ template {
   -ms-flex-pack: distribute;
   justify-content: space-around;
   font-size: 1.2rem; }
+  @media screen and (max-width: 480px) {
+    .player__controls {
+      display: none; } }
 
 .player__duration {
   color: #575757;
