@@ -71,3 +71,14 @@ p {
   margin: 0;
   padding: 0;
 }
+
+input {
+  outline: none;
+}
+
+.fixed {
+  position: fixed;
+  // height: 100%;
+  // overflow-y: hidden;
+  transform: none;
+}

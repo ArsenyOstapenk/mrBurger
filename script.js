@@ -304,17 +304,20 @@ reviews.addEventListener('click', e => {
       let modalText = elem.previousElementSibling.textContent;
       popup.textContent = modalText;
       overlay.style.display = 'flex';
+      // document.body.parentNode.removeChild('.maincontent');
    }
 })
 
 reviewsButton.addEventListener('click', function () {
    overlay.style.display = 'none';
+   // document.body.classList.remove('fixed');
 })
 
 overlay.addEventListener('click', e => {
    let elem = e.target
    if (elem.classList != 'popup' && elem.classList != 'popup__text') {
       overlay.style.display = 'none';
+      // document.body.classList.remove('fixed');
    }
 })
 
@@ -507,3 +510,17 @@ if (isMobile) {
    })
 }
 
+const map = document.querySelector('#map');
+
+map.addEventListener('click', e=>{
+   map.classList.remove('map-container');
+   map.classList.add('map-container--active');
+})
+
+// $('.maps').click(function () {
+//    $('.maps iframe').css("pointer-events", "auto");
+// });
+
+// $(".maps").mouseleave(function () {
+//    $('.maps iframe').css("pointer-events", "none");
+// });

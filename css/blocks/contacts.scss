@@ -46,7 +46,8 @@
     line-height: 1.5rem;
 
     @include phone {
-        margin-bottom: -.9rem;;
+        margin-bottom: -.9rem;
+        ;
     }
 }
 
@@ -130,4 +131,20 @@
         background: #ffffff;
         fill: black;
     }
+}
+
+.map-container iframe {
+    pointer-events: none;
+}
+
+.map-container--active iframe {
+    pointer-events: auto;
+}
+
+.map-container {
+    height: 100%;
+}
+
+.map-container--active {
+    height: 100%;
 }

@@ -74,6 +74,15 @@ p {
   margin: 0;
   padding: 0; }
 
+input {
+  outline: none; }
+
+.fixed {
+  position: fixed;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none; }
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -1554,25 +1563,53 @@ template {
   -ms-flex-pack: center;
   justify-content: center; }
 
-progress::-webkit-progress-bar {
+#progress::-webkit-progress-bar {
   cursor: pointer;
   border-radius: 0.625rem;
   height: 0.3125rem;
   margin: auto; }
 
-progress {
-  height: 0.625rem;
-  background-color: transparent;
+#progress {
+  height: 0.25rem;
   width: 90%;
   border-radius: 0.3125rem; }
 
-progress::-webkit-progress-value {
+#progress::-webkit-progress-value {
+  -webkit-appearance: none;
   cursor: pointer;
   background-color: #575757;
   border-radius: 0.3125rem; }
 
 video {
   cursor: pointer; }
+
+.playback__way {
+  -webkit-appearance: none;
+  height: 0.25rem;
+  width: 3.75rem;
+  border-radius: 0.125rem;
+  background-color: #878787;
+  cursor: pointer; }
+
+.playback__way::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 0.625rem;
+  width: 0.625rem;
+  border-radius: 50%;
+  background-color: #575757;
+  cursor: pointer; }
+
+.player__volume {
+  padding: 0 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
 
 .form {
   background: url(../../img/bg_form.png) center center no-repeat;
@@ -1960,6 +1997,18 @@ video {
   .social-twitter:hover {
     background: #ffffff;
     fill: black; }
+
+.map-container iframe {
+  pointer-events: none; }
+
+.map-container--active iframe {
+  pointer-events: auto; }
+
+.map-container {
+  height: 100%; }
+
+.map-container--active {
+  height: 100%; }
 
 .fixed-menu {
   position: fixed;
