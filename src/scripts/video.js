@@ -4,6 +4,11 @@ const progress = document.querySelector('#progress');
 const progressTime = document.querySelector('#progressTime');
 const allTime = document.querySelector('#allTime');
 const videoVolume = document.querySelector('#volume'); 
+const workPlay = document.querySelector('.work__play'); 
+const svgButton = document.querySelector('.play-button'); 
+const bigButton = document.querySelector('.work__play'); 
+const volumeX = document.querySelector('.work__volume-x'); 
+
 
 video.ontimeupdate = progressUpdate;
 video.volume = 10 / 100;
@@ -13,14 +18,26 @@ volume.addEventListener('input', function () {
    let v = this.value;
    video.volume = v / 100;
 
-   if(v === 0) {
-      //поменять иконку (перечеркнутая)
+   console.log(videoVolume.value);
+
+   if (videoVolume.value == 0) {
+      volumeX.style.display = 'block';
+   }else{
+      volumeX.style.display = 'none';
    }
+})
+
+bigButton.addEventListener('click', e=> {
+   bigButton.style.display = 'none';
+   video.play();
+   videoBtn.classList.add('play-button--pause');
+   svgButton.style.display = 'none';
 })
 
 videoBtn.addEventListener('click', e => {
    if (video.paused) {
       video.play();
+      bigButton.style.display = 'none';
    }else{
       video.pause();
       //video.currentTime = 0; //сбросить время
@@ -29,10 +46,11 @@ videoBtn.addEventListener('click', e => {
    } 
    if (video.paused) {
       videoBtn.classList.remove('play-button--pause');
-      videoBtn.classList.add('play-button');
+      svgButton.style.display = 'block';
    } else {
+      svgButton.style.display = 'none';
       videoBtn.classList.add('play-button--pause');
-      videoBtn.classList.remove('play-button');
+      bigButton.style.display = 'none';
    }
 })
 
@@ -44,10 +62,11 @@ video.addEventListener('click', e => {
    }
    if (video.paused) {
       videoBtn.classList.remove('play-button--pause');
-      videoBtn.classList.add('play-button');
+      svgButton.style.display = 'block';
    } else {
+      svgButton.style.display = 'none';
       videoBtn.classList.add('play-button--pause');
-      videoBtn.classList.remove('play-button');
+      bigButton.style.display = 'none';
    }
 })
 
@@ -78,8 +97,9 @@ progress.addEventListener('mouseup', function () {
    this.value = (100 * targetClick) / widthProgress;
    video.currentTime = video.duration * (targetClick / widthProgress);
    video.play();
+   svgButton.style.display = 'none';
    videoBtn.classList.add('play-button--pause');
-   videoBtn.classList.remove('play-button');
+   bigButton.style.display = 'none';
 })
 
 
@@ -87,7 +107,6 @@ function progressUpdate() {
    let d = video.duration; //полное время
    let c = video.currentTime; //прогресс времени
 
-   console.log(video.duration);
    progress.value = (100 * c) / d;
    progressTime.textContent = '00:' + Math.floor(c);
 
@@ -99,7 +118,7 @@ function progressUpdate() {
       progress.value = 0;
       video.currentTime = 0;
       videoBtn.classList.remove('play-button--pause');
-      videoBtn.classList.add('play-button');
+      svgButton.style.display = 'block';
       video.pause();
    }
 }

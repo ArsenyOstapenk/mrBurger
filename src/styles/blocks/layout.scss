@@ -1,26 +1,47 @@
 html {
   height: 100%;
   font-size: 16px;
+
+  @include tablets {
+    font-size: 15px;
+  }
+
+  @include phone {
+    font-size: 14px;
+  }
 }
 
 body {
+  font-family: ubuntu;
   height: 100%;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  touch-action: none;
+}
+
+.section {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  min-width: 58.75rem;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
+}
+
+.maincontent {
+  height: 100%;
+  transition: transform 1s;
 }
 
 .container {
-  width: 58.75rem;
-  height: 100%;
+  width: 95%;
+  max-width: 940px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -51,6 +72,13 @@ p {
   padding: 0;
 }
 
-a {
-  text-decoration: none;
+input {
+  outline: none;
+}
+
+.fixed {
+  position: fixed;
+  // height: 100%;
+  // overflow-y: hidden;
+  transform: none;
 }

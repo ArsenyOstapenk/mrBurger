@@ -4,7 +4,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <link rel="stylesheet" href="css/layout/main.css">
+   <link rel="stylesheet" href="main.min.css">
    <title>MrBurger</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
       <section class="section section__active section--block">
          <div class="container">
             <header class="header">
-               <img class="logo" src="./img/logo.png" alt="логотип MrBurger">
+               <img class="logo" src="img/logo.png" alt="логотип MrBurger">
                <nav class="nav">
                   <ul class="nav__list">
                      <li class="nav__item">
@@ -50,7 +50,7 @@
             </header>
             <div class="content-block">
                <div class="block1__leftside">
-                  <img src="./img/steam_hello.png" alt="Burger" class="block1__leftside-burger">
+                  <img src="img/steam_hello.png" alt="Burger" class="block1__leftside-burger">
                </div>
                <div class="block1__rightside">
                   <div class="block1__rightside-title">мы делаем</div>
@@ -59,14 +59,14 @@
             </div>
             <button type="button" class="arrow-scroll">
                <svg class="arrow-scroll__btn" data-scroll-to="1">
-                  <use xlink:href="./css/layout/sprite.svg#scroll_down"></use>
+                  <use xlink:href="img/icons/sprite.svg#scroll_down"></use>
                </svg>
             </button>
          </div>
                <div class="section-hover hover-menu" id="hover-menu">
                   <div class="container">
                      <header class="hover-menu__header">
-                        <img class="logo" src="./img/logo.png" alt="логотип MrBurger">
+                        <img class="logo" src="img/logo.png" alt="логотип MrBurger">
                         <a class="cross" id="cross">
                            <ul class="cross__list">
                               <li class="cross__list-one"></li>
@@ -108,7 +108,7 @@
             <ul class="content__list">
                <li class="content__list-section">
                   <svg class="list-section__meat">
-                     <use xlink:href="./css/layout/sprite.svg#meat"></use>
+                     <use xlink:href="./img/icons/sprite.svg#meat"></use>
                   </svg>
                   <div class="content__text">
                      <h1>100% свежее мясо</h1>
@@ -118,7 +118,7 @@
                </li>
                <li class="content__list-section">
                   <svg class="list-section__hand">
-                     <use xlink:href="./css/layout/sprite.svg#hand"></use>
+                     <use xlink:href="./img/icons/sprite.svg#hand"></use>
                   </svg>
                   <div class="content__text">
                      <h1>Ручная сборка</h1>
@@ -128,7 +128,7 @@
                </li>
                <li class="content__list-section">
                   <svg class="list-section__natural">
-                     <use xlink:href="./css/layout/sprite.svg#natural"></use>
+                     <use xlink:href="./img/icons/sprite.svg#natural"></use>
                   </svg>
                   <div class="content__text">
                      <h1>Натуральные ингредиенты</h1>
@@ -149,7 +149,7 @@
                   <ul class="slider-block__active" id="slider">
                      <li class="slide-elem">
                         <div class="slide-elem__leftside">
-                           <img class="leftside__img" src="./img/steam_hello.png" alt="">
+                           <img class="leftside__img" src="img/steam_hello.png" alt="">
                         </div>
                         <div class="slide-elem__rightside">
                            <h1 class="rightside__title">dark beef burger</h1>
@@ -163,7 +163,7 @@
                      </li>
                      <li class="slide-elem">
                         <div class="slide-elem__leftside">
-                           <img class="leftside__img" src="./img/steam_hello.png" alt="">
+                           <img class="leftside__img" src="img/steam_hello.png" alt="">
                         </div>
                         <div class="slide-elem__rightside">
                            <h1 class="rightside__title">dark beef burger</h1>
@@ -177,7 +177,7 @@
                      </li>
                      <li class="slide-elem">
                         <div class="slide-elem__leftside">
-                           <img class="leftside__img" src="./img/steam_hello.png" alt="">
+                           <img class="leftside__img" src="img/steam_hello.png" alt="">
                         </div>
                         <div class="slide-elem__rightside">
                            <h1 class="rightside__title">dark beef burger</h1>
@@ -326,7 +326,7 @@
                <div class="reviews__block-hover">
                   <div class="reviews__title">Константин Спилберг</div>
                   <div class="reviews__text">
-                     <p>Отзыв писал очкарик</p>
+                     <p>Отзыв писал другой человек</p>
                   </div>
                   <button class="reviews__button" type="button"></button>
                </div>
@@ -366,7 +366,7 @@
                <div class="reviews__block-hover">
                   <div class="reviews__title">Константин Спилберг</div>
                   <div class="reviews__text">
-                     <p>Я очкастая баба с тоннелями</p>
+                     <p>отзыв другого человека</p>
                   </div>
                   <button class="reviews__button" type="button"></button>
                </div>
@@ -399,36 +399,39 @@
       <section class="section work">
          <div class="container">
             <div class="title__work">как мы работаем</div>
-
             <div class="player">
-
                <div class="player__wrapper">
                   <video id="video" width="100%" height="85%">
                      <source src="video/Car Washer - 6594.mp4" type="video/mp4" poster="">
                   </video>
                </div>
-
                <div id="controls" class="player__controls">
-                  <div class="player__start">
-                     <a class="play-button" id="playBtn"></a>
+                  <div class="player__start" id="playBtn">
+                     <svg class="play-button">
+                        <use xlink:href="./img/icons/sprite.svg#play"></use>
+                     </svg>
                   </div>
                   <div class="player__duration">
                      <span id="progressTime">00:00</span>
                   </div>
                   <div class="player__playback">
-                     <!-- <progress id="progress" max="100" value="0"></progress> -->
                      <input class="playback__way" type="range" min="0" max="100" value="0" id="progress"/>
                   </div>
                   <div class="player__duration">
                      <span id="alltime">00:19</span>
                   </div>
+                  <svg class="work__volume">
+                     <use xlink:href="./img/icons/sprite.svg#volume"></use>
+                  </svg>
                   <div class="player__volume">
                      <input class="playback__way" type="range" min="0" max="100" value="10" id="volume"/>
+                     <div class="work__volume-x">x</div>
                   </div>
                </div>
-
             </div> 
-
+            <svg class="work__play">
+               <use xlink:href="./img/icons/sprite.svg#play"></use>
+            </svg>
          </div>
       </section>
       <section class="section form">
@@ -523,7 +526,7 @@
                <address class="footer__contacts-tel">
                   <h3>Санкт-Петербург,ул.Бабушкина,д.12/1-15</h3>
                   <svg class="footer__phone">
-                     <use xlink:href="./css/layout/sprite.svg#phone"></use>
+                     <use xlink:href="./img/icons/sprite.svg#phone"></use>
                   </svg>
                   <a href="tel:+78123771377" class="contacts__phone">
                      +7(812) 377-13-77</a>
@@ -532,22 +535,22 @@
                   <ul class="footer__social">
                      <li class="social__item">
                         <svg class="social-vk">
-                           <use xlink:href="./css/layout/sprite.svg#vk"></use>
+                           <use xlink:href="./img/icons/sprite.svg#vk"></use>
                         </svg>
                      </li>
                      <li class="social__item">
                         <svg class="social-fb">
-                           <use xlink:href="./css/layout/sprite.svg#fb"></use>
+                           <use xlink:href="./img/icons/sprite.svg#fb"></use>
                         </svg>
                      </li>
                      <li class="social__item">
                         <svg class="social-inst">
-                           <use xlink:href="./css/layout/sprite.svg#inst"></use>
+                           <use xlink:href="./img/icons/sprite.svg#inst"></use>
                         </svg>
                      </li>
                      <li class="social__item">
                         <svg class="social-twitter">
-                           <use xlink:href="./css/layout/sprite.svg#twitter"></use>
+                           <use xlink:href="./img/icons/sprite.svg#twitter"></use>
                         </svg>
                      </li>
                   </ul>
@@ -596,7 +599,6 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.3.6/mobile-detect.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
-   <script src="./script.js"></script>
-   <script src="./video.js"></script>
+   <script src="./main.min.js"></script>
 </body>
 </html>
